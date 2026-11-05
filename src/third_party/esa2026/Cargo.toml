@@ -1,0 +1,19 @@
+[package]
+name = "sfc-esa2026"
+version = "0.1.0"
+edition = "2024"
+[lib]
+crate-type = ["cdylib"]
+[dependencies]
+kiddo = "=5.0.3"
+nabo = "=0.5.0"
+neighbourhood = "=0.0.1"
+acap = "=0.4.0"
+sprk = { path = "sprk" }
+pyo3 = { version = "0.27", features = ["auto-initialize"] }
+[profile.release]
+debug = true
+
+
+[patch.crates-io]
+kiddo = { path = "kiddo" }

@@ -1,0 +1,108 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index e13d43e..83af5ca 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -67,14 +67,14 @@ install(TARGETS kdTreeParallel
+ 	LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+ 	PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
+ 
+-add_executable(test ${PROJECT_SOURCE_DIR}/tests/test.cpp)
+-target_link_libraries(test PUBLIC kdTreeParallel)
+-target_include_directories(test PUBLIC ${PROJECT_SOURCE_DIR}/include)
+-
+-find_package(Boost REQUIRED)
+-add_executable(rtree ${PROJECT_SOURCE_DIR}/tests/rtree.cpp)
+-target_link_libraries(rtree PUBLIC kdTreeParallel ${Boost_LIBRARIES})
+-target_include_directories(rtree PUBLIC ${PROJECT_SOURCE_DIR}/include ${Boost_INCLUDE_DIRS})
++# add_executable(test ${PROJECT_SOURCE_DIR}/tests/test.cpp)
++# target_link_libraries(test PUBLIC kdTreeParallel)
++# target_include_directories(test PUBLIC ${PROJECT_SOURCE_DIR}/include)
++
++#find_package(Boost REQUIRED)
++#add_executable(rtree ${PROJECT_SOURCE_DIR}/tests/rtree.cpp)
++#target_link_libraries(rtree PUBLIC kdTreeParallel ${Boost_LIBRARIES})
++#target_include_directories(rtree PUBLIC ${PROJECT_SOURCE_DIR}/include ${Boost_INCLUDE_DIRS})
+ 
+ if(JEMA)
+ 	target_link_libraries(test PUBLIC libjemalloc.so)
+diff --git a/include/cpdd/basic_point.h b/include/cpdd/basic_point.h
+index 2877ecd..36ecbec 100644
+--- a/include/cpdd/basic_point.h
++++ b/include/cpdd/basic_point.h
+@@ -80,6 +80,8 @@ struct PointType {
+         o << ") " << std::flush;
+         return o;
+     }
++    T x() { return pnt[0]; }
++    T y() { return pnt[1]; }
+ 
+     coords pnt;
+ };
+diff --git a/include/cpdd/query_op/nn_search_helpers.h b/include/cpdd/query_op/nn_search_helpers.h
+index c7dd001..dea322f 100644
+--- a/include/cpdd/query_op/nn_search_helpers.h
++++ b/include/cpdd/query_op/nn_search_helpers.h
+@@ -7,7 +7,7 @@ namespace cpdd {
+ 
+ template<typename point, typename T>
+ class NN_Comparator {
+-    using coord = point::coord;
++    using coord = typename point::coord;
+     // using T = std::pair<point*, coord>;
+     using Num = Num_Comparator<coord>;
+ 
+diff --git a/include/cpdd/query_op/range_count.hpp b/include/cpdd/query_op/range_count.hpp
+index 5338823..05dab4a 100644
+--- a/include/cpdd/query_op/range_count.hpp
++++ b/include/cpdd/query_op/range_count.hpp
+@@ -131,8 +131,8 @@ size_t ParallelKDtree<point>::range_count_radius(node* T, const circle& cl, cons
+ };
+ 
+ template<typename point>
+-ParallelKDtree<point>::simple_node* ParallelKDtree<point>::range_count_save_path(node* T, const box& queryBox,
+-                                                                                 const box& nodeBox) {
++typename ParallelKDtree<point>::simple_node* ParallelKDtree<point>::range_count_save_path(node* T, const box& queryBox,
++                                                                                          const box& nodeBox) {
+     if (!intersect_box(nodeBox, queryBox)) return alloc_simple_node(0);
+     if (within_box(nodeBox, queryBox)) {
+         return alloc_simple_node(T->size);
+diff --git a/include/cpdd/utility/dimensinality.hpp b/include/cpdd/utility/dimensinality.hpp
+index 6e93ae9..9953b01 100644
+--- a/include/cpdd/utility/dimensinality.hpp
++++ b/include/cpdd/utility/dimensinality.hpp
+@@ -5,8 +5,8 @@
+ namespace cpdd {
+ // NOTE: pick the rebuild dimension for tree T based on the split method and current dimension
+ template<typename point>
+-inline ParallelKDtree<point>::dim_type ParallelKDtree<point>::pick_rebuild_dim(const node* T, const dim_type d,
+-                                                                               const dim_type DIM) {
++inline typename ParallelKDtree<point>::dim_type ParallelKDtree<point>::pick_rebuild_dim(const node* T, const dim_type d,
++                                                                                        const dim_type DIM) {
+     if (this->_split_rule == MAX_STRETCH_DIM) {
+         return 0;
+     } else if (this->_split_rule == ROTATE_DIM) {
+@@ -19,7 +19,8 @@ inline ParallelKDtree<point>::dim_type ParallelKDtree<point>::pick_rebuild_dim(c
+ 
+ // NOTE: return the dimension in bx that has max stretch
+ template<typename point>
+-inline ParallelKDtree<point>::dim_type ParallelKDtree<point>::pick_max_stretch_dim(const box& bx, const dim_type DIM) {
++inline typename ParallelKDtree<point>::dim_type ParallelKDtree<point>::pick_max_stretch_dim(const box& bx,
++                                                                                            const dim_type DIM) {
+     dim_type d(0);
+     coord diff(bx.second.pnt[0] - bx.first.pnt[0]);
+     assert(Num::Geq(diff, 0));
+diff --git a/include/cpdd/utility/tree_node.hpp b/include/cpdd/utility/tree_node.hpp
+index ef99cfb..4829f7d 100644
+--- a/include/cpdd/utility/tree_node.hpp
++++ b/include/cpdd/utility/tree_node.hpp
+@@ -17,8 +17,8 @@ struct ParallelKDtree<point>::simple_node {
+ 
+ template<typename point>
+ struct ParallelKDtree<point>::node {
+-    using coord = point::coord;
+-    using coords = point::coords;
++    using coord = typename point::coord;
++    using coords = typename point::coords;
+     using points = parlay::sequence<point>;
+     using slice = parlay::slice<point*, point*>;
+ 

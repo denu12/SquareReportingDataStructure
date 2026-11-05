@@ -1,0 +1,56 @@
+load("@rules_foreign_cc//foreign_cc:defs.bzl", "cmake")
+
+filegroup(
+    name = "all",
+    srcs = glob(["**"]),
+    visibility = ["//visibility:public"],
+)
+
+cmake(
+    name = "pam_cmake",
+    build_args = ["-j8"],
+    cache_entries = {
+        "SERIAL": "ON",
+    },
+    env = {
+        "LD": "",
+    },
+    lib_source = ":all",
+    out_headers_only = True,
+    #lib_name="kdTreeParallel",
+    visibility = ["//visibility:public"],
+    deps = [
+        "@parlaylib",
+    ],
+    alwayslink = 1,
+)
+
+cc_library(
+    name = "pam_import",
+    hdrs = glob(["include/**/*h"]),
+    include_prefix = "pam",
+    strip_include_prefix = "include/pam",
+    deps = [
+        "@parlaylib",
+    ],
+)
+
+cc_library(
+    name = "pam_examples",
+    hdrs = glob(["examples/range_query/*h"]),
+    include_prefix = "pam_ex",
+    strip_include_prefix = "examples/range_query",
+    deps = [
+        "@parlaylib",
+    ],
+)
+
+cc_library(
+    name = "PAM",
+    visibility = ["//visibility:public"],
+    deps = [
+        #":pam_cmake",
+        ":pam_import",
+        ":pam_examples",
+    ],
+)

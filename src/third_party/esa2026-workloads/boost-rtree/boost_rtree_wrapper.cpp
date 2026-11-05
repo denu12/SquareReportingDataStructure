@@ -1,0 +1,285 @@
+// boost_rtree_wrapper.cpp
+// C++ wrapper for Boost.Geometry R-tree providing a C-compatible interface for Rust FFI.
+// Uses Boost's highly-optimized R-tree implementation for spatial indexing.
+
+#include "boost_rtree_wrapper.h"
+#include <boost/geometry.hpp>
+#include <boost/geometry/geometries/point.hpp>
+#include <boost/geometry/geometries/box.hpp>
+#include <boost/geometry/index/rtree.hpp>
+#include <vector>
+#include <memory>
+#include <cmath>
+#include <algorithm>
+
+namespace bg = boost::geometry;
+namespace bgi = boost::geometry::index;
+
+// Helper to set coordinates at compile-time using index sequence
+template<size_t DIM, size_t... Is>
+void set_coords_impl(bg::model::point<float, DIM, bg::cs::cartesian>& pt,
+                     const float* coords, std::index_sequence<Is...>) {
+    ((bg::set<Is>(pt, coords[Is])), ...);
+}
+
+template<size_t DIM>
+void set_coords(bg::model::point<float, DIM, bg::cs::cartesian>& pt, const float* coords) {
+    set_coords_impl(pt, coords, std::make_index_sequence<DIM>{});
+}
+
+// Helper to calculate squared distance between point and coordinate array
+template<size_t DIM, size_t... Is>
+float distance_squared_impl(const bg::model::point<float, DIM, bg::cs::cartesian>& pt,
+                           const float* coords, std::index_sequence<Is...>) {
+    return (((bg::get<Is>(pt) - coords[Is]) * (bg::get<Is>(pt) - coords[Is])) + ...);
+}
+
+template<size_t DIM>
+float distance_squared(const bg::model::point<float, DIM, bg::cs::cartesian>& pt, const float* coords) {
+    return distance_squared_impl(pt, coords, std::make_index_sequence<DIM>{});
+}
+
+// Template implementation for different dimensions
+template<size_t DIM>
+class BoostRTreeImpl {
+public:
+    using Point = bg::model::point<float, DIM, bg::cs::cartesian>;
+    using Value = std::pair<Point, size_t>;  // (point, index)
+    using RTree = bgi::rtree<Value, bgi::quadratic<16>>;
+
+    BoostRTreeImpl(const float* points, size_t num_points, size_t dimensions)
+        : num_points_(num_points), dimensions_(dimensions) {
+        rebuild(points, num_points);
+    }
+
+    void rebuild(const float* points, size_t num_points) {
+        num_points_ = num_points;
+        std::vector<Value> values;
+        values.reserve(num_points);
+
+        for (size_t i = 0; i < num_points; ++i) {
+            Point pt;
+            set_coords<DIM>(pt, &points[i * DIM]);
+            values.emplace_back(pt, i);
+        }
+
+        tree_ = std::make_unique<RTree>(values.begin(), values.end());
+    }
+
+    BoostRTreeResult radius_search(
+        const float* query_point,
+        float radius_squared
+    ) {
+        BoostRTreeResult result = {nullptr, nullptr, 0};
+
+        Point query_pt;
+        set_coords<DIM>(query_pt, query_point);
+
+        float radius = std::sqrt(radius_squared);
+
+        // Create bounding box around query point
+        Point min_corner, max_corner;
+        float min_coords[DIM], max_coords[DIM];
+        for (size_t d = 0; d < DIM; ++d) {
+            min_coords[d] = query_point[d] - radius;
+            max_coords[d] = query_point[d] + radius;
+        }
+        set_coords<DIM>(min_corner, min_coords);
+        set_coords<DIM>(max_corner, max_coords);
+        bg::model::box<Point> search_box(min_corner, max_corner);
+
+        // Query with bounding box and distance predicate
+        std::vector<Value> results;
+        tree_->query(
+            bgi::within(search_box) &&
+            bgi::satisfies([&](const Value& v) {
+                return distance_squared<DIM>(v.first, query_point) <= radius_squared;
+            }),
+            std::back_inserter(results)
+        );
+
+        // Allocate and copy results
+        result.count = results.size();
+        if (result.count > 0) {
+            result.indices = new size_t[result.count];
+            result.distances_squared = new float[result.count];
+            for (size_t i = 0; i < result.count; ++i) {
+                result.indices[i] = results[i].second;
+                result.distances_squared[i] = distance_squared<DIM>(results[i].first, query_point);
+            }
+        }
+
+        return result;
+    }
+
+    size_t point_count() const { return num_points_; }
+    size_t dimensions() const { return dimensions_; }
+
+private:
+    std::unique_ptr<RTree> tree_;
+    size_t num_points_;
+    size_t dimensions_;
+};
+
+// Opaque struct holding the implementation
+struct BoostRTreeIndex {
+    void* impl;
+    size_t dimensions;
+};
+
+// Helper function to create implementation based on dimension
+template<size_t DIM>
+BoostRTreeIndex* create_impl(const float* points, size_t num_points, size_t dimensions) {
+    auto* index = new BoostRTreeIndex;
+    index->impl = new BoostRTreeImpl<DIM>(points, num_points, dimensions);
+    index->dimensions = dimensions;
+    return index;
+}
+
+// C API implementations
+extern "C" {
+
+BoostRTreeIndex* boost_rtree_create_index(
+    const float* points,
+    size_t num_points,
+    size_t dimensions
+) {
+    // Runtime dispatch based on dimensions
+    switch (dimensions) {
+        case 2: return create_impl<2>(points, num_points, dimensions);
+        case 3: return create_impl<3>(points, num_points, dimensions);
+        case 4: return create_impl<4>(points, num_points, dimensions);
+        case 5: return create_impl<5>(points, num_points, dimensions);
+        case 6: return create_impl<6>(points, num_points, dimensions);
+        case 7: return create_impl<7>(points, num_points, dimensions);
+        case 8: return create_impl<8>(points, num_points, dimensions);
+        case 9: return create_impl<9>(points, num_points, dimensions);
+        case 10: return create_impl<10>(points, num_points, dimensions);
+        case 11: return create_impl<11>(points, num_points, dimensions);
+        case 12: return create_impl<12>(points, num_points, dimensions);
+        case 13: return create_impl<13>(points, num_points, dimensions);
+        case 14: return create_impl<14>(points, num_points, dimensions);
+        case 15: return create_impl<15>(points, num_points, dimensions);
+        case 16: return create_impl<16>(points, num_points, dimensions);
+        default:
+            // For unsupported dimensions, return nullptr
+            return nullptr;
+    }
+}
+
+void boost_rtree_destroy_index(BoostRTreeIndex* index) {
+    if (!index) return;
+
+    switch (index->dimensions) {
+        case 2:  delete static_cast<BoostRTreeImpl<2>*>(index->impl);  break;
+        case 3:  delete static_cast<BoostRTreeImpl<3>*>(index->impl);  break;
+        case 4:  delete static_cast<BoostRTreeImpl<4>*>(index->impl);  break;
+        case 5:  delete static_cast<BoostRTreeImpl<5>*>(index->impl);  break;
+        case 6:  delete static_cast<BoostRTreeImpl<6>*>(index->impl);  break;
+        case 7:  delete static_cast<BoostRTreeImpl<7>*>(index->impl);  break;
+        case 8:  delete static_cast<BoostRTreeImpl<8>*>(index->impl);  break;
+        case 9:  delete static_cast<BoostRTreeImpl<9>*>(index->impl);  break;
+        case 10: delete static_cast<BoostRTreeImpl<10>*>(index->impl); break;
+        case 11: delete static_cast<BoostRTreeImpl<11>*>(index->impl); break;
+        case 12: delete static_cast<BoostRTreeImpl<12>*>(index->impl); break;
+        case 13: delete static_cast<BoostRTreeImpl<13>*>(index->impl); break;
+        case 14: delete static_cast<BoostRTreeImpl<14>*>(index->impl); break;
+        case 15: delete static_cast<BoostRTreeImpl<15>*>(index->impl); break;
+        case 16: delete static_cast<BoostRTreeImpl<16>*>(index->impl); break;
+    }
+
+    delete index;
+}
+
+BoostRTreeResult boost_rtree_radius_search(
+    const BoostRTreeIndex* index,
+    const float* query_point,
+    float radius_squared
+) {
+    BoostRTreeResult result = {nullptr, nullptr, 0};
+    if (!index) return result;
+
+    switch (index->dimensions) {
+        case 2:  return static_cast<BoostRTreeImpl<2>*>(index->impl)->radius_search(query_point, radius_squared);
+        case 3:  return static_cast<BoostRTreeImpl<3>*>(index->impl)->radius_search(query_point, radius_squared);
+        case 4:  return static_cast<BoostRTreeImpl<4>*>(index->impl)->radius_search(query_point, radius_squared);
+        case 5:  return static_cast<BoostRTreeImpl<5>*>(index->impl)->radius_search(query_point, radius_squared);
+        case 6:  return static_cast<BoostRTreeImpl<6>*>(index->impl)->radius_search(query_point, radius_squared);
+        case 7:  return static_cast<BoostRTreeImpl<7>*>(index->impl)->radius_search(query_point, radius_squared);
+        case 8:  return static_cast<BoostRTreeImpl<8>*>(index->impl)->radius_search(query_point, radius_squared);
+        case 9:  return static_cast<BoostRTreeImpl<9>*>(index->impl)->radius_search(query_point, radius_squared);
+        case 10: return static_cast<BoostRTreeImpl<10>*>(index->impl)->radius_search(query_point, radius_squared);
+        case 11: return static_cast<BoostRTreeImpl<11>*>(index->impl)->radius_search(query_point, radius_squared);
+        case 12: return static_cast<BoostRTreeImpl<12>*>(index->impl)->radius_search(query_point, radius_squared);
+        case 13: return static_cast<BoostRTreeImpl<13>*>(index->impl)->radius_search(query_point, radius_squared);
+        case 14: return static_cast<BoostRTreeImpl<14>*>(index->impl)->radius_search(query_point, radius_squared);
+        case 15: return static_cast<BoostRTreeImpl<15>*>(index->impl)->radius_search(query_point, radius_squared);
+        case 16: return static_cast<BoostRTreeImpl<16>*>(index->impl)->radius_search(query_point, radius_squared);
+        default: return result;
+    }
+}
+
+void boost_rtree_free_result(BoostRTreeResult* result) {
+    if (result) {
+        delete[] result->indices;
+        delete[] result->distances_squared;
+        result->indices = nullptr;
+        result->distances_squared = nullptr;
+        result->count = 0;
+    }
+}
+
+void boost_rtree_update_points(
+    BoostRTreeIndex* index,
+    const float* points,
+    size_t num_points
+) {
+    if (!index) return;
+
+    switch (index->dimensions) {
+        case 2:  static_cast<BoostRTreeImpl<2>*>(index->impl)->rebuild(points, num_points);  break;
+        case 3:  static_cast<BoostRTreeImpl<3>*>(index->impl)->rebuild(points, num_points);  break;
+        case 4:  static_cast<BoostRTreeImpl<4>*>(index->impl)->rebuild(points, num_points);  break;
+        case 5:  static_cast<BoostRTreeImpl<5>*>(index->impl)->rebuild(points, num_points);  break;
+        case 6:  static_cast<BoostRTreeImpl<6>*>(index->impl)->rebuild(points, num_points);  break;
+        case 7:  static_cast<BoostRTreeImpl<7>*>(index->impl)->rebuild(points, num_points);  break;
+        case 8:  static_cast<BoostRTreeImpl<8>*>(index->impl)->rebuild(points, num_points);  break;
+        case 9:  static_cast<BoostRTreeImpl<9>*>(index->impl)->rebuild(points, num_points);  break;
+        case 10: static_cast<BoostRTreeImpl<10>*>(index->impl)->rebuild(points, num_points); break;
+        case 11: static_cast<BoostRTreeImpl<11>*>(index->impl)->rebuild(points, num_points); break;
+        case 12: static_cast<BoostRTreeImpl<12>*>(index->impl)->rebuild(points, num_points); break;
+        case 13: static_cast<BoostRTreeImpl<13>*>(index->impl)->rebuild(points, num_points); break;
+        case 14: static_cast<BoostRTreeImpl<14>*>(index->impl)->rebuild(points, num_points); break;
+        case 15: static_cast<BoostRTreeImpl<15>*>(index->impl)->rebuild(points, num_points); break;
+        case 16: static_cast<BoostRTreeImpl<16>*>(index->impl)->rebuild(points, num_points); break;
+    }
+}
+
+size_t boost_rtree_point_count(const BoostRTreeIndex* index) {
+    if (!index) return 0;
+
+    switch (index->dimensions) {
+        case 2:  return static_cast<BoostRTreeImpl<2>*>(index->impl)->point_count();
+        case 3:  return static_cast<BoostRTreeImpl<3>*>(index->impl)->point_count();
+        case 4:  return static_cast<BoostRTreeImpl<4>*>(index->impl)->point_count();
+        case 5:  return static_cast<BoostRTreeImpl<5>*>(index->impl)->point_count();
+        case 6:  return static_cast<BoostRTreeImpl<6>*>(index->impl)->point_count();
+        case 7:  return static_cast<BoostRTreeImpl<7>*>(index->impl)->point_count();
+        case 8:  return static_cast<BoostRTreeImpl<8>*>(index->impl)->point_count();
+        case 9:  return static_cast<BoostRTreeImpl<9>*>(index->impl)->point_count();
+        case 10: return static_cast<BoostRTreeImpl<10>*>(index->impl)->point_count();
+        case 11: return static_cast<BoostRTreeImpl<11>*>(index->impl)->point_count();
+        case 12: return static_cast<BoostRTreeImpl<12>*>(index->impl)->point_count();
+        case 13: return static_cast<BoostRTreeImpl<13>*>(index->impl)->point_count();
+        case 14: return static_cast<BoostRTreeImpl<14>*>(index->impl)->point_count();
+        case 15: return static_cast<BoostRTreeImpl<15>*>(index->impl)->point_count();
+        case 16: return static_cast<BoostRTreeImpl<16>*>(index->impl)->point_count();
+        default: return 0;
+    }
+}
+
+size_t boost_rtree_dimensions(const BoostRTreeIndex* index) {
+    return index ? index->dimensions : 0;
+}
+
+}  // extern "C"

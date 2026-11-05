@@ -1,0 +1,21 @@
+[package]
+name = "sprk-python"
+description = "Python bindings for the SPRK-tree spatial index"
+readme = "README.md"
+license.workspace = true
+repository.workspace = true
+keywords.workspace = true
+categories.workspace = true
+authors.workspace = true
+version.workspace = true
+edition.workspace = true
+
+
+[lib]
+name = "sprk"
+crate-type = ["cdylib"]
+
+[dependencies]
+sprk = { path = ".." }
+pyo3 = { version = "0.28", features = ["extension-module"] }
+numpy = "0.28"

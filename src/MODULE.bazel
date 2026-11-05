@@ -1,0 +1,103 @@
+bazel_dep(name = "rules_proto", version = "7.1.0")
+bazel_dep(name = "abseil-cpp", version = "20250512.1")
+bazel_dep(name = "rules_foreign_cc", version = "0.13.0")
+bazel_dep(name = "sqlite3", version = "3.47.2")
+bazel_dep(name = "protobuf", version = "33.4")
+bazel_dep(name = "bazel_skylib", version = "1.7.1")
+bazel_dep(name = "rules_python", version = "1.5.1")
+bazel_dep(name = "rules_cc", version = "0.2.8")
+bazel_dep(name = "google_benchmark", version = "1.9.2")
+bazel_dep(name = "boost.multiprecision", version = "1.87.0")
+bazel_dep(name = "boost.any", version = "1.87.0")
+bazel_dep(name = "boost.algorithm", version = "1.87.0")
+bazel_dep(name = "googletest", version = "1.17.0.bcr.2")
+bazel_dep(name = "boost.foreach", version = "1.87.0")
+bazel_dep(name = "platforms", version = "1.0.0")
+
+new_git_repository = use_repo_rule("@bazel_tools//tools/build_defs/repo:git.bzl", "new_git_repository")
+
+git_repository = use_repo_rule("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
+
+http_archive = use_repo_rule("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
+new_git_repository(
+    name = "thst",
+    build_file = "//utils/workspace:BUILD.thst",
+    commit = "4ff6aa575f87dce4321754981314a923b0b4bbb6",
+    remote = "https://github.com/tuxalin/THST.git",
+)
+
+new_git_repository(
+    name = "pkd_tree",
+    build_file = "//utils/workspace:BUILD.pkd_tree",
+    commit = "62c8839aa6e87b8cbf652a341a472f1fcf789ec0",
+    patch_args = ["-p1"],
+    patches = ["//utils/workspace:Pkd.patch"],
+    recursive_init_submodules = True,
+    remote = "https://github.com/ucrparlay/Pkd-tree.git",
+)
+
+bazel_dep(name = "boost.property_map", version = "1.87.0")
+
+new_git_repository(
+    name = "PAM",
+    build_file = "//utils/workspace:BUILD.pam",
+    commit = "3574543ad84c34acb22edbeecb9d11a97a5eb87d",
+    patch_args = ["-p1"],
+    patches = ["//utils/workspace:PAM.patch"],
+    recursive_init_submodules = True,
+    remote = "https://github.com/cmuparlay/PAM.git",
+)
+
+new_git_repository(
+    name = "pargeo",
+    build_file = "//utils/workspace:BUILD.pargeo",
+    commit = "b87077ca253d28595e6887bb369501a64774712a",
+    patch_args = ["-p1"],
+    patches = ["//utils/workspace:pargeo.patch"],
+    recursive_init_submodules = True,
+    remote = "https://github.com/wangyiqiu/pargeo.git",
+)
+
+new_git_repository(
+    name = "parlaylib",
+    build_file = "//utils/workspace:BUILD.parlaylib",
+    commit = "51017699dcc421f80479cdb238d3092233ad0d26",
+    recursive_init_submodules = True,
+    remote = "https://github.com/cmuparlay/parlaylib.git",
+    # patch_args = ["-p1"],
+    # patches = ["//utils/workspace:Pkd.patch"],
+)
+
+# Hedron's Compile Commands Extractor for Bazel
+# https://github.com/hedronvision/bazel-compile-commands-extractor
+bazel_dep(name = "hedron_compile_commands", dev_dependency = True)
+git_override(
+    module_name = "hedron_compile_commands",
+    commit = "f5fbd4cee671d8d908f37c83abaf70fba5928fc7",
+    remote = "https://github.com/mikael-s-persson/bazel-compile-commands-extractor.git",
+    # Replace the commit hash (above) with the latest (https://github.com/hedronvision/bazel-compile-commands-extractor/commits/main).
+    # Even better, set up Renovate and let it do the work for you (see "Suggestion: Updates" in the README).
+)
+
+http_archive(
+    name = "CGAL",
+    build_file = "//utils/workspace:BUILD.CGAL",
+    sha256 = "884da87edd0701932302aa36d24f330e62cab27e595567507cfd2df0cf82fdd2",
+    strip_prefix = "CGAL-6.0.1",
+    urls = ["https://github.com/CGAL/cgal/releases/download/v6.0.1/CGAL-6.0.1.zip"],
+)
+
+http_archive(
+    name = "GMP",
+    build_file = "//utils/workspace:BUILD.GMP",
+    sha256 = "a3c2b80201b89e68616f4ad30bc66aee4927c3ce50e33929ca819d5c43538898",
+    strip_prefix = "gmp-6.3.0",
+    urls = ["https://gmplib.org/download/gmp/gmp-6.3.0.tar.xz"],
+)
+
+bazel_dep(name = "gflags", version = "2.2.2")
+
+bazel_dep(name = "rules_go", version = "0.51.0")
+bazel_dep(name = "gazelle", version = "0.40.0")
+bazel_dep(name = "boost.geometry", version = "1.87.0")

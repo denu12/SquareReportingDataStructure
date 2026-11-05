@@ -1,0 +1,47 @@
+load("@rules_foreign_cc//foreign_cc:defs.bzl", "cmake")
+
+filegroup(
+    name = "all",
+    srcs = glob(["**"]),
+    visibility = ["//visibility:public"],
+)
+
+cmake(
+    name = "pkd_tree_cmake",
+    build_args = ["-j8"],
+    cache_entries = {
+        "SERIAL": "ON",
+        "CGAL" :"OFF",
+    },
+    env = {
+        "LD": "",
+    },
+    lib_source = ":all",
+    out_headers_only = True,
+    #lib_name="kdTreeParallel",
+    visibility = ["//visibility:public"],
+    deps = [
+    ],
+    alwayslink = 1,
+)
+cc_library(
+    name= "pkd_import",
+    hdrs = glob(["include/**/*h*"]),
+    strip_include_prefix ="include/cpdd",
+    include_prefix ="cpdd",
+    deps=[":pkd_util"],
+)
+cc_library(
+    name= "pkd_util",
+    hdrs = glob(["include/cpdd/utility/*h*"]),
+    strip_include_prefix ="include/cpdd",
+)
+
+cc_library(
+    name = "pkd_tree",
+    visibility = ["//visibility:public"],
+    deps = [
+        ":pkd_tree_cmake",
+        ":pkd_import",
+    ],
+)

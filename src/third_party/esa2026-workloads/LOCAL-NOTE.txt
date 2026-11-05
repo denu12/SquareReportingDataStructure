@@ -1,0 +1,1 @@
+The upstream example Python path was changed from a machine-specific absolute path to snn/python. This snapshot is retained for workload provenance; it is not used to build our competitors.

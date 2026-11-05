@@ -1,0 +1,48 @@
+load("@rules_foreign_cc//foreign_cc:defs.bzl", "cmake")
+
+filegroup(
+    name = "all",
+    srcs = glob(["**"]),
+    visibility = ["//visibility:public"],
+)
+
+cmake(
+    name = "cgal_cmake",
+    build_args = ["-j8"],
+    cache_entries = {
+        "BUILD_SHARED_LIBS": "OFF",
+        "WITH_CGAL_Qt5": "OFF",
+        "WITH_demos": "OFF",
+        "WITH_examples": "OFF",
+    },
+    defines = [
+        "CGAL_USE_CORE",
+        "CGAL_HEADER_ONLY",
+    ],
+    env = {
+        "LD": "",
+    },
+    lib_source = ":all",
+    out_headers_only = True,
+    visibility = ["//visibility:public"],
+    deps = [
+        "@GMP",
+        "@boost.algorithm",
+        "@boost.any",
+        "@boost.multiprecision",
+    ],
+    alwayslink = 1,
+)
+
+cc_library(
+    name = "CGAL",
+    defines = [
+        "CGAL_USE_CORE",
+        "CGAL_HEADER_ONLY",
+    ],
+    visibility = ["//visibility:public"],
+    deps = [
+        ":cgal_cmake",
+        "@GMP",
+    ],
+)

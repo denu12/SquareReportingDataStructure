@@ -1,0 +1,26 @@
+[package]
+name = "ddim-esa-check"
+version = "0.1.0"
+edition = "2024"
+[dependencies]
+kiddo = "=5.0.3"
+nabo = "=0.5.0"
+neighbourhood = "=0.0.1"
+acap = "=0.4.0"
+sprk = { path = "../../../third_party/esa2026/sprk", features = ["internals", "svd"] }
+[patch.crates-io]
+kiddo = { path = "../../../third_party/esa2026/kiddo" }
+[[bin]]
+name = "ddim-esa-check"
+path = "main.rs"
+[[bin]]
+name = "ddim-snn-check"
+path = "snn_main.rs"
+
+[[bin]]
+name = "ddim-sprk-ids-check"
+path = "sprk_ids_main.rs"
+
+[[bin]]
+name = "sprk-adapted-3d-check"
+path = "../../../third_party/esa2026/sprk/examples/campaign3d.rs"

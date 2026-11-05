@@ -1,0 +1,40 @@
+load("@rules_foreign_cc//foreign_cc:defs.bzl", "cmake")
+
+filegroup(
+    name = "all",
+    srcs = glob(["**"]),
+    visibility = ["//visibility:public"],
+)
+
+cmake(
+    name = "parlay_cmake",
+    build_args = ["-j8"],
+    cache_entries = {
+        "SERIAL": "ON",
+    },
+    env = {
+        "LD": "",
+    },
+    lib_source = ":all",
+    out_headers_only = True,
+    #lib_name="kdTreeParallel",
+    visibility = ["//visibility:public"],
+    alwayslink = 1,
+)
+
+cc_library(
+    name = "parlay_import",
+    hdrs = glob(["include/**/*h"]),
+    include_prefix = "parlay",
+    strip_include_prefix = "include/parlay",
+    deps = [],
+)
+
+cc_library(
+    name = "parlaylib",
+    visibility = ["//visibility:public"],
+    deps = [
+        ":parlay_cmake",
+        ":parlay_import",
+    ],
+)

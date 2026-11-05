@@ -1,0 +1,23 @@
+ANN 1.1.2 by Sunil Arya and David M. Mount (2010-01-27).
+Project: https://www.cs.umd.edu/~mount/ANN/
+Source: https://www.cs.umd.edu/~mount/ANN/Files/1.1.2/ann_1.1.2.zip
+Downloaded 2026-10-06; archive SHA-256: 1b54b58ae697202a09d793de51ee9200fe1d5c39def78d9e8f5c0d08e48afaf5
+Copyright and LGPL terms are preserved in Copyright.txt and License.txt.
+
+Vendored src/ and include/ are upstream, except include/ANN/ANN.h:
+an optional ANN_USE_LINF macro switch remains available in the header. The
+benchmark target ann_euclidean uses the default Euclidean metric. No search
+or construction algorithm has been changed.
+
+Benchmark ID: ann_fr; ANNkd_tree, default bucket size 1 and sliding-midpoint
+splitting (explicitly selected). Static 2D uint32 coordinates converted exactly
+to double. annkFRSearch uses eps=0 and the default unlimited search; self-matches
+and duplicate input points are retained. Each query first counts with k=0, then
+reports with k=count using the documented API. Output-index storage is reused
+between queries. Both traversals and nearest-neighbor ordering costs are timed.
+Circle queries pass their actual center and squared radius, rounded outward,
+then apply one exact integer circle check while enumerating coordinates.
+General rectangles use a circumscribed disk and inclusive rectangle filtering.
+No floating-point coordinate rescaling.
+ANN uses global query state: this adapter is for the serial benchmark only.
+This is a kd-tree competitor, not an SFC implementation.

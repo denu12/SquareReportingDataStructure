@@ -1,0 +1,9 @@
+[submodule "src/third_party/pgm-index"]
+	path = src/third_party/pgm-index
+	url = https://github.com/gvinciguerra/PGM-index.git
+[submodule "src/third_party/phtree-cpp"]
+	path = src/third_party/phtree-cpp
+	url = https://github.com/tzaeschke/phtree-cpp.git
+[submodule "src/third_party/space-tree-lib"]
+	path = src/third_party/space-tree-lib
+	url = https://github.com/ucrparlay/SpaceTreeLib.git

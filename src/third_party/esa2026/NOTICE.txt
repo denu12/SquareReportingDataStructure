@@ -1,0 +1,49 @@
+ESA 2026 competitor bridge. Upstream rembed a81b216a2a63bde3d4447e4053b4ca31081fe286
+SNN ea7a2db86ce1c5353998fa8f7f68e6f4d8dc6945
+Adaptations: selected Rust wrappers converted f32 to f64; normalized uint32 coordinates exactly by 2^-32. Circle enclosure with outward numerical margin, followed by exact integer membership filtering. Nabo self matches enabled. Neighbourhood representative indices repaired for duplicates. Grid out-of-bounds query guard and raw Vec spare-capacity write repaired. Static 2D and dimensional Grid width uses the arithmetic mean query radius, available as declared workload metadata before construction; .001 is retained as fallback for empty/zero-radius workloads. This is not timing-based tuning. All timing includes bridge and filtering. Parallel features disabled; pin runs to one CPU. Python SNN uses original implementation with float64 inputs.
+SPRK vendored revision 4c08d8590ff901bb599a283481053e3232860adb (0.2.0); not a claim to reproduce the paper's binaries. Main comparison covers Table 2, not ablation variants. SNN is py_snn, as confirmed by upstream plotting scripts.
+Kiddo 5.0.3 is vendored with one bug fix in src/float_leaf_slice/leaf_slice.rs: nearest_n_within remainder result item uses remainder_items[idx] instead of self.content_items[idx]. Otherwise leaf tails report IDs from the start of the leaf. Discovered by exact point-multiset regression tests.
+Build uses Rust 1.99.0 release optimization and -Ctarget-cpu=native. Python package versions recorded in python-requirements.txt.
+Current SPRK entries: esa_sprk_RUST_EXACT (2D IntegerPointSprk from the
+ESA authors), and esa_sprk_CHEATING_IDS_ONLY (display: SPRK (original)).
+SPRK 0.2.0 by Dennis Kobert and Tobias Kempf remains MIT licensed.
+The adapted entry selects conservative leaf ranges with the f32 tree and tests
+stored original integer points before bulk output. Conversion, tree and leaf
+payload construction are timed. The standalone Rust driver consumes the final
+coordinate vector without another copy.
+SPRK (original) retains f64 floating search and materializes individual IDs
+without integer post-filtering or coordinate output. This contract choice is
+ours, not an allegation about upstream. Floating-contract admission remains
+enabled; integer differences are recorded separately.
+
+Dynamic reporting adapter revision (2026-10-07): direct radius requests to
+mutable Kiddo via its native unsorted iterator; output packed IDs decoded to
+original integer points, followed by one common exact circle filter. No changes
+to the upstream index implementation in this revision.
+
+Static reporting adapter revision (2026-10-07): Neighbourhood coordinates are
+converted directly back to uint32 without a coordinate-to-ID hash lookup.
+Python query arrays are reused and returned NumPy IDs are read through the
+buffer protocol, avoiding tolist and repeated query-array allocation.
+VP-tree uses acap's public fixed-radius Neighborhood visitor with the original
+search traversal, avoiding kNN heap maintenance and sorting. This shared
+wrapper also serves the d-dimensional campaign. Immutable Kiddo retains its
+native result-vector API; Nabo retains its native unsorted kNN-with-radius API.
+No upstream search predicates or correctness failures are repaired here.
+
+Historical audit adapter revision (2026-10-09; retired): replaces the former f64/scalar SPRK
+reporting path with the f32 candidate path described above. Runtime loading and
+Python imports are outside construction timing. All dimensions receive outward
+margins and exact integer post-filtering. Grid receives the mean query-radius
+hint in dimensional as well as 2D campaigns. Other ESA wrappers remain f64
+adaptations, as disclosed above. Historical timings do not measure this revision.
+
+Historical post-audit diagnostic revision: SPRK (original) uses f64 width 8,
+normalized integer inputs and sqrt(r2/2^64 + 64*f64::EPSILON) radius. Query
+timing includes floating search and ID writes only. Integer filtering and
+coordinate materialization are omitted. The then-current SPRK adaptation used f32 with exact
+integer filtering and coordinate output. Frozen audited runs are unchanged.
+
+Retained SPRK adaptation: integer_reporting.rs from TrueDoctor/DiskReportingDataStructure
+commit 6ee75fdbd33ecb3d4014b99c5036509b6a7c9f97 (sprk-exact-point-reporting).
+Original MIT license and wembed-pdf attribution retained. Local campaign driver added.

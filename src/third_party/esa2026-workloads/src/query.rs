@@ -1,0 +1,184 @@
+use crate::{Embedding, NodeId, dvec::DVec};
+use rayon::prelude::*;
+
+pub trait Graph {
+    fn is_connected(&self, first: NodeId, second: NodeId) -> bool;
+    fn neighbors(&self, index: NodeId) -> &[NodeId];
+    fn weight(&self, index: NodeId) -> f64;
+}
+
+pub trait Position<const D: usize> {
+    fn position(&self, index: NodeId) -> &DVec<D>;
+    fn num_nodes(&self) -> usize;
+    fn dim(&self) -> usize {
+        D
+    }
+}
+pub trait IndexClone<const D: usize>: SpatialIndex<D> {
+    fn clone_box<'a>(&'a self) -> Box<dyn SpatialIndex<D> + 'a>;
+}
+
+impl<const D: usize, T: Clone + Sized + SpatialIndex<D> + Sync> IndexClone<D> for T {
+    fn clone_box<'a>(&'a self) -> Box<dyn SpatialIndex<D> + 'a> {
+        Box::new(self.clone())
+    }
+}
+
+pub trait SpatialIndex<const D: usize>: Query<D> + Update<D> + Graph + Position<D> + Sync {
+    fn name(&self) -> String;
+
+    /// Hint the expected query radius so the data structure can tune itself.
+    /// The default implementation is a no-op.
+    fn set_radius_hint(&mut self, _radius: f64) {}
+
+    /// Returns the source code implementation as a string for checksum calculation.
+    /// This should include all files that affect the performance of this data structure.
+    fn implementation_string(&self) -> &'static str;
+
+    fn checksum(&self) -> String {
+        use sha2::Digest;
+        let common_files = concat![
+            include_str!("dvec.rs"),
+            include_str!("../.cargo/config.toml")
+        ];
+        let implementation = self.implementation_string();
+        let hasher = sha2::Sha256::new().chain_update(common_files);
+        format!("{:x}", hasher.chain_update(implementation).finalize())
+    }
+}
+
+pub trait Query<const D: usize>: Position<D> + Graph {
+    fn query_radius(&self, _pos: DVec<D>, _radius: f64, _results: &mut Vec<NodeId>) {
+        unimplemented!(
+            "radius query is not implemented for {}",
+            std::any::type_name::<Self>()
+        );
+    }
+    /// Return the list of neighbors in a given radius. You are allowed to return results asymmetrically e.g only nodes to the left of you
+    fn nearest_neighbors(&self, index: usize, radius: f64, results: &mut Vec<NodeId>) {
+        let pos = *self.position(index);
+        let scaled_radius = radius * self.weight(index).powi(2);
+        self.query_radius(pos, scaled_radius, results);
+    }
+    fn nearest_neighbors_owned(&self, index: usize, radius: f64) -> Vec<NodeId> {
+        let mut results = Vec::new();
+        self.nearest_neighbors(index, radius, &mut results);
+        results
+    }
+
+    /// Runs a batch of nn queries and makes the result symmetric
+    fn nearest_neighbors_batched(&self, indices: &[usize]) -> Vec<Vec<usize>>
+    where
+        Self: Sync,
+    {
+        let n = indices.len();
+        // Run all NN queries in parallel
+        let per_node: Vec<Vec<usize>> = indices
+            .par_iter()
+            .map(|&index| self.nearest_neighbors_owned(index, 1.))
+            .collect();
+
+        // Symmetrize: merge forward edges and reverse edges
+        let mut results = vec![vec![]; n];
+        for (index, neighbors) in per_node.into_iter().enumerate() {
+            for other in neighbors {
+                results[index].push(other);
+                results[other].push(index);
+            }
+        }
+        results.par_iter_mut().for_each(|vec| {
+            vec.sort_unstable();
+            vec.dedup();
+        });
+        results
+    }
+}
+
+pub trait Update<const D: usize> {
+    fn update_positions(&mut self, postions: &[DVec<D>], last_delta: Option<f64>);
+}
+
+pub trait Embedder<'a, const D: usize>: Query<D> + Update<D> + Graph + Position<D> {
+    fn repelling_nodes(&self, index: usize, result: &mut Vec<NodeId>) {
+        self.nearest_neighbors(index, 1., result);
+        let pos = self.position(index);
+        let weight = self.weight(index);
+
+        result.retain(|&x| {
+            index != x
+                && !self.is_connected(index, x)
+                && (weight > self.weight(x) || (weight == self.weight(x) && index > x))
+                && (self.position(x).distance_squared(pos) as f64)
+                    < (weight * self.weight(x)).powi(2)
+        });
+    }
+    fn attracting_nodes(&self, index: usize) -> Vec<usize> {
+        self.neighbors(index).to_vec()
+    }
+
+    fn new(embedding: &crate::Embedding<'a, D>) -> Self;
+    fn from_graph(graph: &'a crate::graph::Graph) -> Self
+    where
+        Self: Sized,
+    {
+        Self::new(&Embedding {
+            positions: Vec::new(),
+            graph,
+        })
+    }
+
+    fn graph_statistics(&self) -> (f64, f64)
+    where
+        Self: Sync,
+    {
+        let ids: Vec<_> = (0..(self.num_nodes())).collect();
+        let results = self.nearest_neighbors_batched(&ids);
+
+        // Count total edges in graph
+        let total_edges: usize =
+            (0..self.num_nodes()).map(|i| self.neighbors(i).len()).sum::<usize>() / 2;
+
+        // precision, recall
+        let (found_edges, found_non_edges) = results
+            .par_iter()
+            .enumerate()
+            .map(|(i, close_nodes)| {
+                let mut edges = 0usize;
+                let mut non_edges = 0usize;
+                for &close_node in close_nodes {
+                    if i == close_node {
+                        continue;
+                    }
+                    let within_dist = (self
+                        .position(i)
+                        .distance_squared(self.position(close_node))
+                        as f64)
+                        < (self.weight(close_node) * self.weight(i)).powi(2);
+
+                    if self.is_connected(i, close_node) && within_dist {
+                        edges += 1;
+                    } else if within_dist {
+                        non_edges += 1;
+                    }
+                }
+                (edges, non_edges)
+            })
+            .reduce(|| (0, 0), |a, b| (a.0 + b.0, a.1 + b.1));
+
+        // Adjust for double-counting (since results are symmetric)
+        let found_edges = found_edges / 2;
+        let found_non_edges = found_non_edges / 2;
+
+        (
+            found_edges as f64 / (found_edges + found_non_edges).max(1) as f64,
+            found_edges as f64 / total_edges as f64,
+        )
+    }
+    fn f1(&self) -> f64
+    where
+        Self: Sync,
+    {
+        let (precision, recall) = self.graph_statistics();
+        2. / (recall.recip() + precision.recip())
+    }
+}

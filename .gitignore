@@ -1,0 +1,12 @@
+/build/
+/data/
+/results/
+__pycache__/
+*.pyc
+*.log
+*.core
+core
+.env
+.env.*
+*.pem
+*.key

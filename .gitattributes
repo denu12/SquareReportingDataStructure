@@ -1,0 +1,7 @@
+* text=auto eol=lf
+*.sh text eol=lf
+Dockerfile text eol=lf
+*.py text eol=lf
+/historical_data export-ignore
+/data export-ignore
+/results export-ignore

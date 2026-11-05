@@ -1,0 +1,17 @@
+/target
+/Cargo.lock
+/.idea
+/perf.data*
+/flamegraph.svg
+.coverage
+worldcities.csv
+cities.zip
+target/
+examples/*.txt
+examples/*.zip
+examples/*.csv
+examples/*.json
+examples/*.rkyv
+examples/*.bincode.gz
+.DS_Store
+.vscode

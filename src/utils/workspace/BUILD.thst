@@ -1,0 +1,6 @@
+cc_library(
+    name = "thst",
+    hdrs = glob(["include/THST/*h*"]),
+    strip_include_prefix = "include/",
+    visibility = ["//visibility:public"],
+)

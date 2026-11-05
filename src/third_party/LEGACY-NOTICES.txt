@@ -1,0 +1,13 @@
+Preserved source notice for the inherited application harness (src/app/app.cc):
+/**
+ * @file diskreport.cc
+ * @author Henrik Reinstädtler (reinstaedtler@stud.uni-heidelberg.de)
+ * @brief  Main program for b-matching in instances.
+ * @version 0.1
+ * @date 2022-12-02
+ *
+ * @copyright Copyright (c) 2022
+ *
+ */
+
+Other utility and dependency copyright/license notices remain in their source files.

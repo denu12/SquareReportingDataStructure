@@ -1,26 +1,17 @@
-# Morton implementations
+# Morton indexes
 
-The retained standalone C++20 implementations and their tests are grouped by dimension.
+These C++20 implementations retain their original Morton order and point
+storage. The square build uses their box queries, which report every point
+occurrence inside inclusive integer bounds.
 
-| Folder | Retained implementations |
-|---|---|
-| [2d](2d/README.md) | Morton, Morton (simd), Morton (plus) |
-| [3d](3d/README.md) | Morton, Morton (simd), Morton (plus) |
-| [d_dim](d_dim/README.md) | Morton and Morton (plus), for 1–16 dimensions |
-| [dynamic](dynamic/README.md) | No active dynamic Morton implementation |
+| Dimension | Active box queries |
+| --- | --- |
+| [2D](2d/README.md) | Morton, MortonPlus, optional AVX-512 MortonSIMD |
+| [3D](3d/README.md) | Morton and MortonPlus |
+| [Generic dimensions](d_dim/README.md) | Inherited disk implementations only |
+| [Dynamic](dynamic/README.md) | No dynamic Morton in the square runner |
 
-Each implementation is a self-contained include file, including files with historical
-`.cc` extensions. Test files are stored beside their implementation. The parent
-BUILD preserves the public Bazel target `//morton:morton` and existing test names.
-
-Plain 2D/3D Morton uses ordinary C++ membership loops that the compiler can vectorize.
-The explicit SIMD and Plus variants use AVX-512; d-dimensional variants use AVX2.
-Use GCC/Clang with C++20 and unsigned __int128 support. See each folder for flags.
-
-Plus derives from the ESA authors' MortonPlus, with the Rust implementation by
-Dennis Kobert; see [credits](../../docs/THIRD_PARTY.md). Keep [LICENSE](LICENSE)
-with redistributed source. The 2D Plus source hash lock is unchanged by this move.
-
-Deprecated scalar/ablation and superseded 3D source copies have been removed.
-Historical measurements and lineage records remain; do not pool historical Morton
-measurements with the promoted compiler-vectorized implementation.
+MortonPlus uses the prefix table and [box refinement](box_refinement.hpp) to
+skip disjoint cells and bulk-copy contained cells. The implementation is
+derived from the ESA authors' MortonPlus, whose Rust implementation was led
+by Dennis Kobert. See the [license](LICENSE) and the [benchmark guide](../../README.md).

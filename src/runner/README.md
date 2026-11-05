@@ -1,8 +1,8 @@
-# Benchmark drivers
+# Inherited disk runners
 
-[dimensional/](dimensional/README.md) contains the 3D and generic-dimensional
-benchmark drivers and competitor adapters. The 2D executable entry point is
-[../app/esa_runner.cc](../app/esa_runner.cc). Root `tools/` launches and limits
-these programs through `run_theater.py`.
+This directory retains disk-project drivers and third-party adapter source for
+reference. They expect the original disk or ball input formats. The copied
+legacy build definitions are not used by the square project.
 
-Retired protobuf experiment controllers and their plotting pipeline were removed.
+Use the [square runner](../square/README.md), [root build guide](../../README.md)
+and [case tools](../../tools/README.md) for current experiments.

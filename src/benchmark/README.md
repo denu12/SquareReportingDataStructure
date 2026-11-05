@@ -1,10 +1,9 @@
-# Shared benchmark support
+# Inherited disk benchmark support
 
-This is harness code, not a Morton implementation.
+This directory preserves the disk project's shared point types, integer circle
+predicate, case loader and correctness harness. `common.hh`, `circle.hh` and
+`esa_campaign.hh` describe the original experiment and are not used to time
+the square project.
 
-- `common.hh`: point/rectangle types used by the competitor adapters.
-- `circle.hh`: exact integer circle representation and membership.
-- `esa_campaign.hh`: dataset loading, algorithm registry, build/query/update
-  measurements and the independent correctness oracle.
-
-The standalone algorithms are in [../morton/](../morton/README.md).
+The square benchmark has its own [case and timing code](../square/README.md).
+It accepts closed integer box bounds rather than center/radius records.

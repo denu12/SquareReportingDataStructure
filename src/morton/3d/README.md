@@ -1,19 +1,15 @@
-# 3D Morton
+# 3D Morton cube queries
 
-| File | Implementation |
-|---|---|
-| [morton3D.cc](morton3D.cc) | Morton: readable compiler-vectorized membership batches |
-| [mortonSIMD3D.hpp](mortonSIMD3D.hpp) | Morton (simd): AVX-512 rank search, eight-point tests and packed xyz output |
-| [mortonplus3d.hpp](mortonplus3d.hpp) | Morton (plus): prefix lookup, octree splitting, bulk reporting and AVX-512 |
+| File | Cube query API | Output |
+| --- | --- | --- |
+| [morton3D.cc](morton3D.cc) | `Morton3D::query_box(lo, hi, out)` | Iterator of point triples |
+| [mortonplus3d.hpp](mortonplus3d.hpp) | `MortonPlus::query_box(lo, hi, out)` | Reusable point buffer |
 
-Standalone C++20 includes. Use `-O3 -march=native`; plain encoding requires BMI2,
-and explicit SIMD/Plus require AVX-512F (Plus also uses BMI2). All retain full
-96-bit Morton keys, exact 66-bit distance sums, uint128 squared radii and duplicates.
-Plain `query_squared` takes an output iterator; SIMD `query_squared` and Plus
-`query` take native Results buffers. Clear reused buffers between queries.
+Both preserve all 96 Morton bits and use closed bounds on the original uint32
+coordinates. Each input occurrence is reported. MortonPlus can refine octree
+cells and bulk-copy cells contained in the cube. Clear reused output buffers
+between queries.
 
-Tests: `morton_3d_variants_test.cc` and `mortonplus3d_test.cc`.
-Build with `bash tools/build_selected_3d.sh` and validate with
-`python tools/check_selected_3d.py`, from the repository root. CMake targets live
-in `src/runner/dimensional`. See [upgrade evidence](../../../docs/MORTON-3D-UPGRADE.md),
-the parent [license](../LICENSE) and [credits](../../../docs/THIRD_PARTY.md).
+The [root CMake build](../../../README.md) enables these backends with C++20
+and BMI2. [mortonSIMD3D.hpp](mortonSIMD3D.hpp) retains the original AVX-512
+ball reporter for reference; it is not a cube backend. [Morton license](../LICENSE).

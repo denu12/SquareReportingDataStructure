@@ -1,6 +1,8 @@
 # Dynamic Morton
 
-There is no retained dynamic Morton implementation. This folder reserves its
-place in the dimension-based layout. The active dynamic campaign uses Boost;
-its adapters remain in `src/app/algorithms/dynamic/reporting`.
-The separate Chan-style dynamic competitor is not a retained Morton variant.
+The source project did not retain a dynamic Morton implementation. The square
+and cube runner is static: it builds an index, then reports queries against
+that fixed set of records. The inherited update adapters are source reference,
+not an active square workload.
+
+See the [active Morton indexes](../README.md).

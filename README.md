@@ -30,9 +30,10 @@ python3 run_theater.py --list
 python3 run_theater.py data/example.bin --algorithms morton morton_plus boost_rstar indexicon_rtree_point
 ```
 
-Use `--dimension 3` in `make_case.py` for cubes. `run_theater.py --bench
---repetitions 3 --cpu 1` runs the selected backends serially on CPU 1 without
-the exhaustive oracle. Run correctness checks first. Each JSON line records
+Use `--dimension 3` in `make_case.py` for cubes. After correctness checks,
+`python3 run_theater.py data/example.bin --bench --repetitions 3 --cpu 1`
+runs the built backends serially on CPU 1 without the exhaustive oracle.
+Each JSON line records
 `n` input records, `queries`, `m` total reported records, build and query times
 in seconds, and the native output type. The actual average result size is
 `m / queries`; `--target-m` only controls the generated side length.
@@ -48,7 +49,8 @@ Morton variant; run that executable only on a host that supports AVX-512.
 
 - **Native box:** Morton and MortonPlus search their Morton intervals against
   the square or cube. The rectangle-capable competitors use their own box API.
-  SpaceTreeLib's native output buffer is consumed directly.
+  SpaceTreeLib's native output buffer is consumed directly. THST uses distinct
+  input IDs so coincident coordinates are not collapsed.
 - **Coarse box then exact box filter:** PGM retains the inherited coordinate
   mapping and iterator fixes. Points on a coarse boundary are checked against
   the original integer bounds so the full-width query stays exact.
@@ -74,3 +76,6 @@ Based on DiskReportingDataStructure commit `aac46efa2c4b58a6439aaaa5c0767546529d
 The Indexicon headers are pinned at `69da8a364f3437a1110d89b9ebeb99473dc25807`;
 THST headers are pinned at `4ff6aa575f87dce4321754981314a923b0b4bbb6`.
 Submodule pins and bundled license files identify the other source versions.
+
+See the [source map](src/README.md), [square benchmark internals](src/square/README.md),
+and [workload tools](tools/README.md) for details.

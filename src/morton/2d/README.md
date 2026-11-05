@@ -1,17 +1,17 @@
-# 2D Morton
+# 2D Morton square queries
 
-| File | Implementation | Compiler flags |
-|---|---|---|
-| [morton.cc](morton.cc) | Morton: 32-point ordinary C++ membership batches and iterator output | `-O3 -march=native` (BMI2) |
-| [mortonSIMD.cc](mortonSIMD.cc) | Morton (simd): explicit vector filtering and packed output | `-O3 -mavx512f -mbmi2` |
-| [mortonplus.hpp](mortonplus.hpp) | Morton (plus): prefix lookup, splitting, bulk reporting and SIMD | `-O3 -mavx512f -mbmi2` |
+| File | Square query API | Output |
+| --- | --- | --- |
+| [morton.cc](morton.cc) | `Morton::query(Box(lo, hi), out)` | Iterator of points |
+| [mortonplus.hpp](mortonplus.hpp) | `MortonPlus::query_box(lo, hi, out)` | Reusable point buffer |
+| [mortonSIMD.cc](mortonSIMD.cc) | `MortonSIMD::query(Box(lo, hi), out)` | Iterator or reusable point buffer |
 
-All retain exact closed-ball membership on uint32 coordinates, 65-bit distance
-sums, duplicate points and uint128 squared radii. Plain Morton accepts an output
-iterator; SIMD and Plus provide native output buffers. Clear a reused buffer
-between independent queries. The source files are standalone C++20 includes.
+The lower and upper corners are inclusive, including a zero-width square at
+one coordinate. Duplicate point occurrences are preserved. These methods append
+to the destination; clear a reusable buffer between independent queries.
 
-Tests: `morton_test.cc`, `morton_simd_batch_test.cc`, `mortonplus_test.cc`.
-Build campaign backends with `bash tools/build_selected_2d.sh` from the repository
-root; validate with `python tools/check_selected_2d.py`.
-See the parent [license](../LICENSE) and [credits](../../../docs/THIRD_PARTY.md).
+Build from the [root CMake project](../../../README.md) with C++20 and BMI2.
+The MortonPlus square path supports scalar rank comparisons on CPUs without
+AVX-512. The explicit MortonSIMD executable is optional (`-DSQUARE_SIMD=ON`)
+and requires AVX-512. The old circle overloads and their tests are retained as
+source reference. [Morton license](../LICENSE).

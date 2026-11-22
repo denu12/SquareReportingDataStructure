@@ -1,0 +1,161 @@
+{
+  "schema": 1,
+  "snapshot_started_utc": "2026-11-22T18:52:56.101553+00:00",
+  "bundles": [
+    {
+      "path": "current/_metadata.jsonl.gz",
+      "sha256": "9fce8f8925398392569bbb41a7fd0709a514a6f2b59142622abc8df63cc433e8",
+      "files": 7,
+      "source_bytes": 58783,
+      "compressed_bytes": 10280,
+      "unreadable": []
+    },
+    {
+      "path": "current/square-full-2d-3d-20261106/2D_ESA_geographical.jsonl.gz",
+      "sha256": "0d7e3838c363afa7103b09d02959fd479eabfd78dcb7f1e1344067a283732d87",
+      "files": 3,
+      "source_bytes": 1448875,
+      "compressed_bytes": 118269,
+      "unreadable": []
+    },
+    {
+      "path": "current/square-full-2d-3d-20261106/2D_ESA_graph_embeddings.jsonl.gz",
+      "sha256": "d46ef7533251ee651b885d3b3109ff3a4e0aa8ceb9495ef390da0f4ed64532a7",
+      "files": 3,
+      "source_bytes": 803926,
+      "compressed_bytes": 63389,
+      "unreadable": []
+    },
+    {
+      "path": "current/square-full-2d-3d-20261106/2D_ESA_uniform_points.jsonl.gz",
+      "sha256": "839413a65a6a9fcb6ca77df25a7513c404c88a51200d8ce49c0407f07c0a81d3",
+      "files": 3,
+      "source_bytes": 377960,
+      "compressed_bytes": 29831,
+      "unreadable": []
+    },
+    {
+      "path": "current/square-full-2d-3d-20261106/GeographyLarge.jsonl.gz",
+      "sha256": "6b97f0b37d43e782b6cd9e07e9d32ef6ea7f39049d115f250ea56f9d8cbaed77",
+      "files": 3,
+      "source_bytes": 5208262,
+      "compressed_bytes": 441564,
+      "unreadable": []
+    },
+    {
+      "path": "current/square-full-2d-3d-20261106/Static3D.jsonl.gz",
+      "sha256": "43096049e99f93f5d9f1172f0247c6f62a4315d7b094a74f5e4a912c21defceb",
+      "files": 3,
+      "source_bytes": 4060119,
+      "compressed_bytes": 343525,
+      "unreadable": []
+    },
+    {
+      "path": "current/square-full-2d-3d-20261106/input_scaling.jsonl.gz",
+      "sha256": "c97a2b8c0d289a03dabe2227dd52c7ec119874d6dec68443313897916ea61df8",
+      "files": 3,
+      "source_bytes": 3165778,
+      "compressed_bytes": 264487,
+      "unreadable": []
+    },
+    {
+      "path": "current/square-full-2d-3d-20261106/input_scaling_3d.jsonl.gz",
+      "sha256": "c3d584cf1108327a001c9ea11d7dc3fc576870bfd335502a779d30b0cb22b9e5",
+      "files": 3,
+      "source_bytes": 2494237,
+      "compressed_bytes": 205555,
+      "unreadable": []
+    },
+    {
+      "path": "current/square-full-2d-3d-20261106/radius_scaling.jsonl.gz",
+      "sha256": "ca1b775a65e94f7a93a95712771b5230c6255bddebc12ab12a40ed4d2a4e715a",
+      "files": 3,
+      "source_bytes": 1908537,
+      "compressed_bytes": 148009,
+      "unreadable": []
+    },
+    {
+      "path": "current/square-full-2d-3d-20261106/radius_scaling_3d.jsonl.gz",
+      "sha256": "7ef64de3aac8b8ef2ea428daf7ea9be7c02012079b91d3c7fdf5de2706173b12",
+      "files": 3,
+      "source_bytes": 1502697,
+      "compressed_bytes": 115969,
+      "unreadable": []
+    },
+    {
+      "path": "current/square-full-2d-3d-20261106/static.jsonl.gz",
+      "sha256": "1901b52613f5844a2af60a459c192734d98c190d3a824f0c23760f384f9e2715",
+      "files": 3,
+      "source_bytes": 5153815,
+      "compressed_bytes": 436577,
+      "unreadable": []
+    },
+    {
+      "path": "current/square-rectangle-followup-2d-20261113/2D_ESA_geographical.jsonl.gz",
+      "sha256": "668fc92485d44942d3526d1aac63b215d467ddd0ff0e07eb762ab5bf971b87dd",
+      "files": 1,
+      "source_bytes": 136631,
+      "compressed_bytes": 11036,
+      "unreadable": []
+    },
+    {
+      "path": "current/square-rectangle-followup-2d-20261113/2D_ESA_graph_embeddings.jsonl.gz",
+      "sha256": "549a09a34d7717d9a268575a8c34f84a6bbc619e5d9a44b2a9f7e37409e8adf2",
+      "files": 1,
+      "source_bytes": 75928,
+      "compressed_bytes": 6257,
+      "unreadable": []
+    },
+    {
+      "path": "current/square-rectangle-followup-2d-20261113/2D_ESA_uniform_points.jsonl.gz",
+      "sha256": "b6e36100175210f7680d75769ec30dd2bd741a6f5a8f64a7883eaac9074cce7e",
+      "files": 1,
+      "source_bytes": 35711,
+      "compressed_bytes": 3154,
+      "unreadable": []
+    },
+    {
+      "path": "current/square-rectangle-followup-2d-20261113/GeographyLarge.jsonl.gz",
+      "sha256": "4c50315661959bd3c3bfbeb1b9a1ce30450c20b60c4dc960d4f1cc42a2882533",
+      "files": 1,
+      "source_bytes": 495114,
+      "compressed_bytes": 40221,
+      "unreadable": []
+    },
+    {
+      "path": "current/square-rectangle-followup-2d-20261113/input_scaling.jsonl.gz",
+      "sha256": "c1795cf1d0fabcd6a71a4258a1612073d3be0b9f0839c9f64b850fddab2deefd",
+      "files": 1,
+      "source_bytes": 302996,
+      "compressed_bytes": 24553,
+      "unreadable": []
+    },
+    {
+      "path": "current/square-rectangle-followup-2d-20261113/radius_scaling.jsonl.gz",
+      "sha256": "362e2a1082b431c32e46a523550711e76546c68e45b2df0cddab2440db91d6c0",
+      "files": 1,
+      "source_bytes": 181755,
+      "compressed_bytes": 13526,
+      "unreadable": []
+    },
+    {
+      "path": "current/square-rectangle-followup-2d-20261113/static.jsonl.gz",
+      "sha256": "a76de316c61ce425955ee7baec18361d12b5e102c7c697f1b35ed663c584ad8d",
+      "files": 1,
+      "source_bytes": 489570,
+      "compressed_bytes": 38928,
+      "unreadable": []
+    }
+  ],
+  "phases": [],
+  "notes": [
+    "Historical and invalid outcomes are retained, not endorsed.",
+    "An active run is a partial snapshot, not a completed campaign.",
+    "State rows and job artifacts overlap; do not count both.",
+    "Input binaries, software builds, private documents and caches are excluded.",
+    "Local home paths, host/user names and private IP addresses are redacted."
+  ],
+  "snapshot_finished_utc": "2026-11-22T18:53:03.306421+00:00",
+  "total_files": 44,
+  "total_phase_rows": 0
+}

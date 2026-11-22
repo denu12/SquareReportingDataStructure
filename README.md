@@ -79,3 +79,7 @@ Submodule pins and bundled license files identify the other source versions.
 
 See the [source map](src/README.md), [square benchmark internals](src/square/README.md),
 and [workload tools](tools/README.md) for details.
+
+Recorded observations from Archie are published in [dated measurement snapshots](measurements/README.md),
+including the [22 November 2026 capture](measurements/2026-11-22/README.md).
+They retain correctness checks, unsuccessful runs, timeouts and reporting contracts.

@@ -1,15 +1,22 @@
-## Current SPRK scope
+# Retained disk adapter notes
+
+This is historical disk/ball harness documentation retained from the parent
+repository at `aac46efa2c4b58a6439aaaa5c0767546529d8402`. It does not describe
+the active square/cube runner. Use the [square benchmark guide](../../square/README.md)
+for that runner. Links to disk protocol documents below point to the parent revision.
+
+## Historical SPRK scope
 
 Our old dimensional exact SPRK wrapper has been removed. The authors' 2D
 IntegerPointSprk now has a local exact 3D extension, `esa_sprk_RUST_EXACT_3D`.
 `MortonPlus3D` extends the C++ MortonPlus port to 3D. Both materialize original
 integer coordinates and support only dimension 3. The original IDs-only SPRK
 driver and other dimensional competitors remain available. See
-[version and validation notes](../../../docs/MORTONPLUS-VERSIONS.md).
+[version and validation notes](https://github.com/denu12/DiskReportingDataStructure/blob/aac46efa2c4b58a6439aaaa5c0767546529d8402/docs/MORTONPLUS-VERSIONS.md).
 
 # Dimensional correctness interfaces
 
-These adapters support the current dimensional correctness and timing harness; they do not reproduce the source paper's measurement protocol. The current rosters are recorded in the [d-dimensional theater definitions](../../../theaters/d-dim/README.md).
+These adapters supported the parent repository's dimensional correctness and timing harness; they do not reproduce the source paper's measurement protocol. Its rosters are recorded in the [d-dimensional theater definitions](https://github.com/denu12/DiskReportingDataStructure/blob/aac46efa2c4b58a6439aaaa5c0767546529d8402/theaters/d-dim/README.md).
 Complete original-index lists (including duplicates) are compared with an
 exact integer scan. A first mismatch excludes an entry; competitor search
 implementations are not repaired after failures.
@@ -55,9 +62,9 @@ to a reusable ID buffer. Existing native floating predicates are not repaired
 or post-filtered to conceal incorrect competitor answers. Historical ID-only
 timings are not comparable with this reporting revision.
 
-The original IDs-only dimensional diagnostic is an explicit exception to coordinate reporting. See [the output contract](../../../docs/REPORTING.md).
+The original IDs-only dimensional diagnostic is an explicit exception to coordinate reporting. See [the output contract](https://github.com/denu12/DiskReportingDataStructure/blob/aac46efa2c4b58a6439aaaa5c0767546529d8402/docs/REPORTING.md).
 
-Publication labels and modification categories are specified in the [adapter catalog](../../../docs/ADAPTERS.md). Use **STANN (adapted)** and **Chan (adapted)** consistently across dimensions; machine IDs remain unchanged.
+Publication labels and modification categories are specified in the [adapter catalog](https://github.com/denu12/DiskReportingDataStructure/blob/aac46efa2c4b58a6439aaaa5c0767546529d8402/docs/ADAPTERS.md). Use **STANN (adapted)** and **Chan (adapted)** consistently across dimensions; machine IDs remain unchanged.
 
 Adapter revision (2026-10-09): nanoflann (adapted) builds once and reuses
 unsorted query buffers, writing coordinates without an intermediate ID vector.

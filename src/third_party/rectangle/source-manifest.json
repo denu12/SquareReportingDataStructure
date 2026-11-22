@@ -1,0 +1,1188 @@
+{
+  "schema": 1,
+  "description": "Exact header trees used by the rectangle follow-up; includes inherited local dependency patches",
+  "files": [
+    {
+      "path": "PAM/examples/range_query/CMakeLists.txt",
+      "sha256": "4721a7af5be9f695956632a6728aa08ab20560b68ceb26e724b265e108c45996",
+      "bytes": 172,
+      "base_revision": "3574543ad84c34acb22edbeecb9d11a97a5eb87d"
+    },
+    {
+      "path": "PAM/examples/range_query/range_sweep.h",
+      "sha256": "cdc00f1f544ffbdd0236d7a2238df4055258b64585fae2d14e0447e1e1360774",
+      "bytes": 2381,
+      "base_revision": "3574543ad84c34acb22edbeecb9d11a97a5eb87d"
+    },
+    {
+      "path": "PAM/examples/range_query/range_tree.h",
+      "sha256": "a2dda8d562537da024803d6f439b1e8133cb4148ac38d40db9468a7f0fcfabc9",
+      "bytes": 4498,
+      "base_revision": "3574543ad84c34acb22edbeecb9d11a97a5eb87d"
+    },
+    {
+      "path": "PAM/examples/range_query/range_utils.h",
+      "sha256": "34fa87288897e2ce2df6b0e8e3a458e03870cf4c525ab737f22511485363fba7",
+      "bytes": 2604,
+      "base_revision": "3574543ad84c34acb22edbeecb9d11a97a5eb87d"
+    },
+    {
+      "path": "PAM/examples/range_query/rs_test.cpp",
+      "sha256": "50652788819ad2a375a0f817821da40fc0e9d5581a3bb794f662e855f31c51aa",
+      "bytes": 3327,
+      "base_revision": "3574543ad84c34acb22edbeecb9d11a97a5eb87d"
+    },
+    {
+      "path": "PAM/examples/range_query/rt_test.cpp",
+      "sha256": "87ef60e7fc3f63548c6e8020249664289ec72ee14d93d4eea69ed0bc43558f51",
+      "bytes": 7700,
+      "base_revision": "3574543ad84c34acb22edbeecb9d11a97a5eb87d"
+    },
+    {
+      "path": "PAM/include/pam/augmented_map.h",
+      "sha256": "4a3e8278ddab2308ef123e756769ebf813e578ef05322169af172cb3edd80be7",
+      "bytes": 7466,
+      "base_revision": "3574543ad84c34acb22edbeecb9d11a97a5eb87d"
+    },
+    {
+      "path": "PAM/include/pam/augmented_node.h",
+      "sha256": "15954044d5cfdd6d239f312bcd20bb4a1e0ddf97804bf2fd87712649a13e8f7e",
+      "bytes": 1761,
+      "base_revision": "3574543ad84c34acb22edbeecb9d11a97a5eb87d"
+    },
+    {
+      "path": "PAM/include/pam/augmented_ops.h",
+      "sha256": "b5e1798ca2d25d8591dbbe3baffc0c1c9656d642b40fd553eb0758dc885e016c",
+      "bytes": 3294,
+      "base_revision": "3574543ad84c34acb22edbeecb9d11a97a5eb87d"
+    },
+    {
+      "path": "PAM/include/pam/avl_tree.h",
+      "sha256": "a0d11d9c42fe91c1870739f9f05694cc451c0fb87e35b006657815817a2b4ba1",
+      "bytes": 1808,
+      "base_revision": "3574543ad84c34acb22edbeecb9d11a97a5eb87d"
+    },
+    {
+      "path": "PAM/include/pam/balance_utils.h",
+      "sha256": "276cf5f5125e904bc19be033c04ba95dc81264ed7048d5bce30cd7c05209e2bd",
+      "bytes": 2606,
+      "base_revision": "3574543ad84c34acb22edbeecb9d11a97a5eb87d"
+    },
+    {
+      "path": "PAM/include/pam/basic_node.h",
+      "sha256": "e7e0325e62309c1311ec8c90276e69e60bcf5fa0c50077f5554a98e5a80888ee",
+      "bytes": 1367,
+      "base_revision": "3574543ad84c34acb22edbeecb9d11a97a5eb87d"
+    },
+    {
+      "path": "PAM/include/pam/build.h",
+      "sha256": "ec4de23f415c97bc3224a8cd0f526a2c0b3e77befe4b2a24500997893a0a0489",
+      "bytes": 5583,
+      "base_revision": "3574543ad84c34acb22edbeecb9d11a97a5eb87d"
+    },
+    {
+      "path": "PAM/include/pam/gc.h",
+      "sha256": "843546943547f11f4f68189492e54c7df63b9699def48c7f42ab53f1f5a4d361",
+      "bytes": 4492,
+      "base_revision": "3574543ad84c34acb22edbeecb9d11a97a5eb87d"
+    },
+    {
+      "path": "PAM/include/pam/get_time.h",
+      "sha256": "c9c0bf350ab0a66034ac40a6d621dc58fc4dfc22cc2ef3f2d029504093a35e00",
+      "bytes": 1668,
+      "base_revision": "3574543ad84c34acb22edbeecb9d11a97a5eb87d"
+    },
+    {
+      "path": "PAM/include/pam/map.h",
+      "sha256": "6a4a5c5c9f3c3363aa4b9b8b9d3ff6bb3055da6773c50fb279cb221fef3ff73d",
+      "bytes": 19205,
+      "base_revision": "3574543ad84c34acb22edbeecb9d11a97a5eb87d"
+    },
+    {
+      "path": "PAM/include/pam/map_ops.h",
+      "sha256": "d3829efda473b19e04015209f856784b1f99c9e0430e81695a448b241dba4adb",
+      "bytes": 20292,
+      "base_revision": "3574543ad84c34acb22edbeecb9d11a97a5eb87d"
+    },
+    {
+      "path": "PAM/include/pam/pam.h",
+      "sha256": "cd98bdbd445c09b71a0d7fb68bdd46affbfe7f00915465054afedbbdd8ef0c3c",
+      "bytes": 424,
+      "base_revision": "3574543ad84c34acb22edbeecb9d11a97a5eb87d"
+    },
+    {
+      "path": "PAM/include/pam/parse_command_line.h",
+      "sha256": "0f09e8487843eb3872d8fac78d5a30c237a1326ed2acd4f715fe67788329676b",
+      "bytes": 3579,
+      "base_revision": "3574543ad84c34acb22edbeecb9d11a97a5eb87d"
+    },
+    {
+      "path": "PAM/include/pam/red_black_tree.h",
+      "sha256": "79d53096f305238409b5f7c9ef34b052459d9d84b74260a414fa9a0df35d3ddc",
+      "bytes": 4784,
+      "base_revision": "3574543ad84c34acb22edbeecb9d11a97a5eb87d"
+    },
+    {
+      "path": "PAM/include/pam/sequence_ops.h",
+      "sha256": "9d3d00a60b81dfa3809273e57c1817a939bd38b859ebc35209d7adcf9b834673",
+      "bytes": 8531,
+      "base_revision": "3574543ad84c34acb22edbeecb9d11a97a5eb87d"
+    },
+    {
+      "path": "PAM/include/pam/treap.h",
+      "sha256": "f8c142a42eb55f09d6679585f1eddee86a8d966958034f1906a11250443fbac1",
+      "bytes": 1203,
+      "base_revision": "3574543ad84c34acb22edbeecb9d11a97a5eb87d"
+    },
+    {
+      "path": "PAM/include/pam/utils.h",
+      "sha256": "a9cce49913f46117825965e19e9455c8eb9381de657f84805abdbdd8fec1d93e",
+      "bytes": 3002,
+      "base_revision": "3574543ad84c34acb22edbeecb9d11a97a5eb87d"
+    },
+    {
+      "path": "PAM/include/pam/weight_balanced_tree.h",
+      "sha256": "7a2a73237f1bd21d933a58218a3aa2d32e3a321e53532595e18872e99badec4b",
+      "bytes": 1508,
+      "base_revision": "3574543ad84c34acb22edbeecb9d11a97a5eb87d"
+    },
+    {
+      "path": "pargeo/LICENSE",
+      "sha256": "795637b2d823011fb3117970a2cdb7767f9515cd28763bbad482aaa59d9b4185",
+      "bytes": 1067,
+      "base_revision": "b87077ca253d28595e6887bb369501a64774712a"
+    },
+    {
+      "path": "pargeo/include/closestPair/divideConquer.h",
+      "sha256": "dd129e1d985a85aeba4713c7f84a9705209c7496cd6b0a0e84a68ea090dc5202",
+      "bytes": 9034,
+      "base_revision": "b87077ca253d28595e6887bb369501a64774712a"
+    },
+    {
+      "path": "pargeo/include/dataset/uniform.h",
+      "sha256": "6922bfdae2f34d77a43256f7e92348b79fa81219edd1749abac695b8828c5dd8",
+      "bytes": 3243,
+      "base_revision": "b87077ca253d28595e6887bb369501a64774712a"
+    },
+    {
+      "path": "pargeo/include/delaunayTriangulation/delaunay.h",
+      "sha256": "1bf39ab0d87cc54f452a1db137c15a3d67a963e0c3a5603586a88872a8d385c2",
+      "bytes": 240,
+      "base_revision": "b87077ca253d28595e6887bb369501a64774712a"
+    },
+    {
+      "path": "pargeo/include/delaunayTriangulation/geometry.h",
+      "sha256": "dbb0be4cf4cbfc9bc016d855225ed487bae4e747ccc3563130e2a66612957681",
+      "bytes": 14124,
+      "base_revision": "b87077ca253d28595e6887bb369501a64774712a"
+    },
+    {
+      "path": "pargeo/include/euclideanMst/euclideanMst.h",
+      "sha256": "24771a4b5a3022a3aeff4860c084d8a373394cedcf2a1c9fd2cd1fc8f1a65685",
+      "bytes": 228,
+      "base_revision": "b87077ca253d28595e6887bb369501a64774712a"
+    },
+    {
+      "path": "pargeo/include/pargeo/IO.h",
+      "sha256": "5b4aedd4270d5e3b31d0dc7b958c5645252d4004072279454b22e0114fe7258f",
+      "bytes": 8227,
+      "base_revision": "b87077ca253d28595e6887bb369501a64774712a"
+    },
+    {
+      "path": "pargeo/include/pargeo/algebra.h",
+      "sha256": "1758c3cba14496d7f8f4e9a1c77946513936118119a2e6169abf048e730bf8ef",
+      "bytes": 892,
+      "base_revision": "b87077ca253d28595e6887bb369501a64774712a"
+    },
+    {
+      "path": "pargeo/include/pargeo/atomics.h",
+      "sha256": "81183e7cf862ad4c4d4d8dc1c094dc66f26816197e5ebe1c56bdfbad5504cb63",
+      "bytes": 2565,
+      "base_revision": "b87077ca253d28595e6887bb369501a64774712a"
+    },
+    {
+      "path": "pargeo/include/pargeo/bccp.h",
+      "sha256": "ce359b38819a7dd2db47983504504893ee01a1d7eaa056a6d6d5d5782aab2e38",
+      "bytes": 4018,
+      "base_revision": "b87077ca253d28595e6887bb369501a64774712a"
+    },
+    {
+      "path": "pargeo/include/pargeo/edge.h",
+      "sha256": "722765ffc47b63cf7eda86b0296ded8fe475ee5c354e9aa1742f077a498bcdcf",
+      "bytes": 1427,
+      "base_revision": "b87077ca253d28595e6887bb369501a64774712a"
+    },
+    {
+      "path": "pargeo/include/pargeo/getTime.h",
+      "sha256": "f0508ccc81e5b0815c34645ed3993e376f9fc5da9195f7b668c809dd4e1e92d5",
+      "bytes": 1726,
+      "base_revision": "b87077ca253d28595e6887bb369501a64774712a"
+    },
+    {
+      "path": "pargeo/include/pargeo/graphIO.h",
+      "sha256": "722e8596a606ecad550b0f5196c62fc25c423ca636bb8397ba11d465726a9c76",
+      "bytes": 5524,
+      "base_revision": "b87077ca253d28595e6887bb369501a64774712a"
+    },
+    {
+      "path": "pargeo/include/pargeo/kdTree.h",
+      "sha256": "d5558f1c31b539692ec17ea1e935d0b1258b8be0aad6ce8279c64cc35be1ce0c",
+      "bytes": 11977,
+      "base_revision": "b87077ca253d28595e6887bb369501a64774712a"
+    },
+    {
+      "path": "pargeo/include/pargeo/kdTreeKnn.h",
+      "sha256": "54ef74310d26cd6d991e8a36e7473620e6108382cb3355c15ee2f16fb900c1b3",
+      "bytes": 6900,
+      "base_revision": "b87077ca253d28595e6887bb369501a64774712a"
+    },
+    {
+      "path": "pargeo/include/pargeo/kdTreeRange.h",
+      "sha256": "3122cefa743006bb1135ad7e96a13b6f4b1e861c190faeebb8a7448ea825f87c",
+      "bytes": 5238,
+      "base_revision": "b87077ca253d28595e6887bb369501a64774712a"
+    },
+    {
+      "path": "pargeo/include/pargeo/kruskal.h",
+      "sha256": "47905b5eb49d623cc58a2f03a4d7c41023cbd4d8e4ef08904e9deb4cdf24c707",
+      "bytes": 6046,
+      "base_revision": "b87077ca253d28595e6887bb369501a64774712a"
+    },
+    {
+      "path": "pargeo/include/pargeo/parBuf.h",
+      "sha256": "816c4a779dcbc9cd4064dcf6c0c3e6e6eb6c2b04ab3bb270e5a8f786b0ea49de",
+      "bytes": 4650,
+      "base_revision": "b87077ca253d28595e6887bb369501a64774712a"
+    },
+    {
+      "path": "pargeo/include/pargeo/parseCommandLine.h",
+      "sha256": "446264e4ed927286fee5bc2dad45dbb58ac78a33c2582a2445302e8363a3f486",
+      "bytes": 3625,
+      "base_revision": "b87077ca253d28595e6887bb369501a64774712a"
+    },
+    {
+      "path": "pargeo/include/pargeo/point.h",
+      "sha256": "9cbe5ad52710eb0a22ad1fe1ac3f8a28bbcb66ce0496dfbf029ecc6569c7fe44",
+      "bytes": 3329,
+      "base_revision": "b87077ca253d28595e6887bb369501a64774712a"
+    },
+    {
+      "path": "pargeo/include/pargeo/pointIO.h",
+      "sha256": "286ee1daddab9b12801fa6bf49a895fd550e43f5be5f8902894789b89786a8d3",
+      "bytes": 3967,
+      "base_revision": "b87077ca253d28595e6887bb369501a64774712a"
+    },
+    {
+      "path": "pargeo/include/pargeo/speculativeFor.h",
+      "sha256": "d515e875cfb54248c5c6bd3e17e6e2a0e010e85d13003ac2f0bcaa687d670bbb",
+      "bytes": 4635,
+      "base_revision": "b87077ca253d28595e6887bb369501a64774712a"
+    },
+    {
+      "path": "pargeo/include/pargeo/unionFind.h",
+      "sha256": "8823dea583840648d2a74d762bca660fdf04aa985c7df6d6cd874c1f5c4db374",
+      "bytes": 4710,
+      "base_revision": "b87077ca253d28595e6887bb369501a64774712a"
+    },
+    {
+      "path": "pargeo/include/pargeo/wspd.h",
+      "sha256": "b03b20f9dd24752b7e3b75b470029531cf5f01c1e54c2ab08ec796d576525f64",
+      "bytes": 7725,
+      "base_revision": "b87077ca253d28595e6887bb369501a64774712a"
+    },
+    {
+      "path": "pargeo/include/pargeo/zorderSort.h",
+      "sha256": "8e5369cb4a7f0aee19f6f6c9ab51758b816e67bec43cc0195fa88171ec987e9f",
+      "bytes": 5530,
+      "base_revision": "b87077ca253d28595e6887bb369501a64774712a"
+    },
+    {
+      "path": "pargeo/include/spatialGraph/spatialGraph.h",
+      "sha256": "944839ea84b0d98f6c5a7de986ad35e3dba9b43cec0b53ae8ec24e61b939f9e5",
+      "bytes": 663,
+      "base_revision": "b87077ca253d28595e6887bb369501a64774712a"
+    },
+    {
+      "path": "parlaylib/LICENSE",
+      "sha256": "4ae228b835015b9cadd76f3ba31bc05918b97448972d33582b1275ddc84bcb08",
+      "bytes": 1100,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/alloc.h",
+      "sha256": "9f174456689aff1abdd2c94182868254ac032ae78fbb9709bb3b920613b6d3ee",
+      "bytes": 11198,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/delayed.h",
+      "sha256": "811f414f668a4548c1a5b0bfeee533b32d77020dacd69a4db20682a9739c3b30",
+      "bytes": 3578,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/delayed_sequence.h",
+      "sha256": "d365e712f8d9759fec5a9f024c0dfba6ca737a98b825ed85221d6e2474d0de0a",
+      "bytes": 9624,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/hash_table.h",
+      "sha256": "5ed84778fb5c1e5e71e0f5a854659bd3e8913a760098dafefaf3ef774f882c22",
+      "bytes": 9692,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/atomic_wait.h",
+      "sha256": "da3ba43ed230d68981e51d46148650d5cb0761fc1c09df90f9c19f7cea03b7a3",
+      "bytes": 14582,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/binary_search.h",
+      "sha256": "9e05c311c9fdd47b8fef20ee9883e129721756817e80f660dda415dcdec1f12b",
+      "bytes": 1612,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/block_allocator.h",
+      "sha256": "66a670ddd75f77be2c917d4e57545753ac5c954cce368312bf896503363bb653",
+      "bytes": 7681,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/block_delayed.h",
+      "sha256": "927809754c30dbb8dd8d41548daf32646af09607a65ff0f20f5ad0ee2c93787e",
+      "bytes": 11808,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/bucket_sort.h",
+      "sha256": "849a1f0fa9cde4502d20988bb4eda8026c9da0db0d92db58e3263ed391dcc56b",
+      "bytes": 5698,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/collect_reduce.h",
+      "sha256": "d7872dd3f8ea06a4eefb5385d350359b368e6622940c6dc934a0efd71c9e7768",
+      "bytes": 12893,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/concurrency/acquire_retire.h",
+      "sha256": "e5e338be0f8126ca58efc213b651da4b1ab6d2d05578325b90d14bf40a0f1716",
+      "bytes": 5146,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/concurrency/hazptr_stack.h",
+      "sha256": "9f8e50e009df12d9448adca52438c96aa6e63fad16509cf1bf11fd4f860db449",
+      "bytes": 3768,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/counting_sort.h",
+      "sha256": "06fc735b27f2f914626cb5c8b19e9e8e60cf4c811500493220293498482891d6",
+      "bytes": 13102,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/debug_uninitialized.h",
+      "sha256": "39705edf8942205f68723ef77d38f1bcddf657e526a08cc2f2650c9095ff1292",
+      "bytes": 5955,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/delayed/common.h",
+      "sha256": "fa0427c59a8ebcf3b7a4085c773e10d5747c20f1eec0591d0d3920d7cf5ff9a6",
+      "bytes": 9344,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/delayed/filter.h",
+      "sha256": "a3ac7d5ebfd4d435363103d1464ca47e70bf43bc4886efdb9b36d35fab43dc71",
+      "bytes": 4450,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/delayed/filter_op.h",
+      "sha256": "78100bd04cabce444743a80418f28ecc6af538a90241224e131f9bdc02cfe41e",
+      "bytes": 4422,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/delayed/flatten.h",
+      "sha256": "92b26cd4edc882a51be68ebf03a0d9cd4a9283317f01283f42b90ad20d0716ad",
+      "bytes": 12414,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/delayed/map.h",
+      "sha256": "076a1f5a7fade527c88cd70071773bece3841a7222bf9b8a4a562a50abbfd886",
+      "bytes": 4268,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/delayed/scan.h",
+      "sha256": "3cedbb387ca5eb7efef84a4cb1f5c8e92fe1d37de7f225e5c622d4fc61d9f0de",
+      "bytes": 6442,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/delayed/terminal.h",
+      "sha256": "3624812031536ccabb7b598489f7f68ad36e04cd24eb3ce6385e9b12200e7d14",
+      "bytes": 6468,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/delayed/zip.h",
+      "sha256": "f85ba267bdd769c3fb0a43b81ecebbe3c8b9c2017bfc06a4960a45d43b94801b",
+      "bytes": 5512,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/file_map.h",
+      "sha256": "c6dbe83991fb4dd86846b26ff048a5a02f5e24cd06e337f194018bbdc8e7b413",
+      "bytes": 2841,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/get_time.h",
+      "sha256": "6fcd89092afdba041028fa259e5de144ba33b08451714afbf655d8d43a7e0027",
+      "bytes": 1626,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/group_by.h",
+      "sha256": "7e42ec8098dff26e633a541780347b4d8554d845186cab0371124fbe585d2496",
+      "bytes": 15101,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/heap_tree.h",
+      "sha256": "30412db9e1103600d1c77975022b5237df7d525cb85b5f105d5323b74a27db93",
+      "bytes": 1637,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/integer_sort.h",
+      "sha256": "a4c699d7a37665048c68fd1d041ca44a00575c09612acacfe6750ca955718ef6",
+      "bytes": 16319,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/memory_size.h",
+      "sha256": "e65363a0b2869db00d554954c60c449106abe314bb1744236b5ab053f50cf0da",
+      "bytes": 3252,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/merge.h",
+      "sha256": "a149c4a5c92ae9be8dce34528aba2064522479471910599172bbc53cd93ea2ff",
+      "bytes": 3585,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/merge_sort.h",
+      "sha256": "497ef35174836c0ad1d0ca31cbcca93343b55dc044c428cb1f2a0140c88e00b9",
+      "bytes": 2237,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/pool_allocator.h",
+      "sha256": "c79c636df61dada320d868e9caa7a3b2042a9bc4025bc53a64fe71b63a8e6ba4",
+      "bytes": 6050,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/posix/file_map_impl_posix.h",
+      "sha256": "25995e94feb2df510b67be3266b98350c2329873765c9167e4df8fe9756b55c3",
+      "bytes": 2312,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/quicksort.h",
+      "sha256": "a35f40e452e359fb10271de62b71e81d6843404528eaf77b45631e758ae58dea",
+      "bytes": 8521,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/sample_sort.h",
+      "sha256": "faf5be2ae6c6c6fb694891dd81b91068842cffbb8eefe90c45db47493ff472f0",
+      "bytes": 11560,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/scheduler_plugins/cilkplus.h",
+      "sha256": "6a84cb1a38c5234a040bf1362620267e2824860e164e14dd34b626a275eb1bdc",
+      "bytes": 1539,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/scheduler_plugins/omp.h",
+      "sha256": "39584899e263112611712a8c6d72d6839b417d33098beead0cc003bc6d1ec083",
+      "bytes": 3025,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/scheduler_plugins/opencilk.h",
+      "sha256": "e4682d9ec3ac0b3c64cb77c400c167badcdf49293963d2223bb03a1f13bc5ec7",
+      "bytes": 1662,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/scheduler_plugins/sequential.h",
+      "sha256": "8cf34c0d4945453346de41183e5cb467956388f25f4fd7c6e6348c04e742caee",
+      "bytes": 1031,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/scheduler_plugins/tbb.h",
+      "sha256": "edf81579941f915f30feffc6bd28bb0a20ea80c5185f16f67190e7e8c65bce49",
+      "bytes": 1941,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/sequence_base.h",
+      "sha256": "82c1258e04dd566668663631fbd162c88a904e677ced3566c1fd85d9fd123c40",
+      "bytes": 21581,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/sequence_ops.h",
+      "sha256": "8264664f69f1bf90c0f13f39ab10ce9f6f350002839de2abcf2395ffc58be2ce",
+      "bytes": 18352,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/stream_delayed.h",
+      "sha256": "0f983b5d16ac5923e1ef37675a4e27e105156460794f7878a0d320fd592a3176",
+      "bytes": 6393,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/thread_id_pool.h",
+      "sha256": "08c25283d3fc0fab59090215cfbeb766a54d48289a9e0ec8116af1771a1bbfe5",
+      "bytes": 6071,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/transpose.h",
+      "sha256": "2dcbcef81dce52007c994833baed001dd879fd0da70e56e12dcc03ccb9179609",
+      "bytes": 8348,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/uninitialized_iterator.h",
+      "sha256": "ed37df51f593b6adaba35522e401a823225b5bd3f2cb6e2915b84c59f23f07a6",
+      "bytes": 5185,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/uninitialized_sequence.h",
+      "sha256": "21f994d7299e120d57ad1384b4e2ddcf82a51a98535e8d5fdb36a6d955c3d1cc",
+      "bytes": 7015,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/uninitialized_storage.h",
+      "sha256": "e6bbd0dd22385a6a5ed6adf78981133df91e2559ee36258302476914dbdda251",
+      "bytes": 1700,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/windows/file_map_impl_windows.h",
+      "sha256": "813ddf159d6b5038bf11b14c68361b20949dae57bd47b8663c01845fbc62d198",
+      "bytes": 3475,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/work_stealing_deque.h",
+      "sha256": "419855b92255344f6a6b719c93e677242faca7d5ffc71075ab5bd2cc00bb0578",
+      "bytes": 3918,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/internal/work_stealing_job.h",
+      "sha256": "8afda17231339b927d6883666e9afee818fa541105d6bbe57cb1b7356237da09",
+      "bytes": 1250,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/io.h",
+      "sha256": "d6f5d474eeaeed002ed40caddec62fa1812db7e6f593f44212c8061bb2acf5f1",
+      "bytes": 12032,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/monoid.h",
+      "sha256": "bafe2e1b4318858a2f93f17ab8e8b823ebf51993433455becfe8bd1a9746a2df",
+      "bytes": 11278,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/parallel.h",
+      "sha256": "56e1ee69a6970f690f132d7b01489bd736587d4f397d5ac8a8b8ac22fcaa253f",
+      "bytes": 7397,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/portability.h",
+      "sha256": "5c9c06e76750375a2267dbbb51d3ef16f8638ac86827e6ae54677893ead33837",
+      "bytes": 3149,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/primitives.h",
+      "sha256": "2b1e17b1d4475eec81a21d05db140a1909a64b658dc0f122d36aaac1b7f734fc",
+      "bytes": 55311,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/random.h",
+      "sha256": "a658a2255ee326ca66bbcfcae92b997d4465f37852b9190e56d07edd41796d51",
+      "bytes": 5170,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/range.h",
+      "sha256": "1d82689f0c65f1a601ce8f5054375324160a3e33c66eed84b06f24abff4411b6",
+      "bytes": 26334,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/relocation.h",
+      "sha256": "4e683af837ff084634343d58e17e2b9cecfb00c6b7af9b3b28ae79f21450cbe6",
+      "bytes": 5849,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/scheduler.h",
+      "sha256": "4e48c14c17ddee04f22087da4362c8184074cb91914bc376f91e9ca08b0d45c4",
+      "bytes": 12417,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/sequence.h",
+      "sha256": "820ee46c7ec7ae3752e110bec1f15061ff2ee680c400acc7a43cd706d3c3baa7",
+      "bytes": 28226,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/slice.h",
+      "sha256": "0ce9699707bc48b0889f33df65ede5c2fc2f65677cdc98f63b6daef3eeea2ea6",
+      "bytes": 3433,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/thread_specific.h",
+      "sha256": "524cfb5fcfd64b59f3ba182e665dcd8dc361b71aa11c831e9be7b6b3c1e8776f",
+      "bytes": 15649,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/type_traits.h",
+      "sha256": "2cbd9184fda7bb43eeebcd0005334533568716482f22a3a7adff4db8d3a1440d",
+      "bytes": 15911,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/utilities.h",
+      "sha256": "afb253d903b36ddc3328fdad01332b4d864425f437d0ccdb6d149fce45dbd558",
+      "bytes": 17875,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "parlaylib/include/parlay/worker_specific.h",
+      "sha256": "f0a13dfa19deccce4191fe553165c9ad5631ee3665d47fca12887071058e1e35",
+      "bytes": 5973,
+      "base_revision": "51017699dcc421f80479cdb238d3092233ad0d26"
+    },
+    {
+      "path": "pkd_tree/LICENSE",
+      "sha256": "ffe0e83185f02df315b8a53aa80ddcd60113e38e924a17b2fc0619819b3cdbd9",
+      "bytes": 1098,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/include/cpdd/basic_point.h",
+      "sha256": "f4d505eceb36b5dd306b0b8024f11a759ac0440bddc9a1c8d72c8e9703e65ad7",
+      "bytes": 4341,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/include/cpdd/batch_op/batch_delete.hpp",
+      "sha256": "3f66043fa8dd98131640f2bfb453a61979e667b5b1e5882a7055efbb429a9959",
+      "bytes": 14673,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/include/cpdd/batch_op/batch_helpers.hpp",
+      "sha256": "c406fd75084b6591d73ea6976825784d29ba12e0ce46488c33e1ce7d0e06c9a6",
+      "bytes": 9238,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/include/cpdd/batch_op/batch_insert.hpp",
+      "sha256": "423fb28952871b5db1e7d518973d1b786df3b5070fab314fe478b6f2c84c1d21",
+      "bytes": 7418,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/include/cpdd/batch_op/build_tree.hpp",
+      "sha256": "7feba75c773f3d290899810d40e91bc3a4631f839ac0f79dc8319c622c908eee",
+      "bytes": 11472,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/include/cpdd/batch_op/inner_tree.hpp",
+      "sha256": "68c15224cc1fe4c1a458201ae88e4e80c4208cf50ad3e5a29b09ff69b498d69c",
+      "bytes": 6042,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/include/cpdd/comparator.h",
+      "sha256": "262ec790b25fa37d05def3f8679edd63cfcfdc8f48317fa792997df1939f5d9e",
+      "bytes": 2177,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/include/cpdd/cpdd.h",
+      "sha256": "3d9bdf04a2e32a695884b0b060ea2272fd70dfa1cc4da68326fee52b31e07946",
+      "bytes": 595,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/include/cpdd/kdTreeParallel.h",
+      "sha256": "822a5b52d70d062f63b0f9942cbb88a3a4e2a37df373de9a4be6a1e314e81be8",
+      "bytes": 10987,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/include/cpdd/query_op/nn_search.hpp",
+      "sha256": "865d11920a5e9528233dea5375f75aa9660a4188751531a02b28e38a2b265f78",
+      "bytes": 4580,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/include/cpdd/query_op/nn_search_helpers.h",
+      "sha256": "21be711e6e1855e2f0290486999d1d949086d83fde30934ffb798a2c9c09c7ae",
+      "bytes": 5347,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/include/cpdd/query_op/range_count.hpp",
+      "sha256": "f6ecdedad9a93716ae9e15c36f3063dad74aabed13488f048cb67090330f6088",
+      "bytes": 5381,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/include/cpdd/query_op/range_query.hpp",
+      "sha256": "bb8998a425216a5c31b7f557c27bb33e8edb5449b6c445d593b6a3314b732608",
+      "bytes": 3770,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/include/cpdd/utility/box_op.hpp",
+      "sha256": "5ba6084daba9a82a7a525bfdcd388bc9b1814c9aa7a816a8d7acf8139c6e0a60",
+      "bytes": 5035,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/include/cpdd/utility/dimensinality.hpp",
+      "sha256": "9c8e932713934fd4c4b1be2098b1ab2cea48c330e0edfe362bc9299549e63b7c",
+      "bytes": 1264,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/include/cpdd/utility/random_support.hpp",
+      "sha256": "3e5afef83d9bc983997a5f56fbae57f5a89f5468c819d3c0a30f4fbd7660dd79",
+      "bytes": 394,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/include/cpdd/utility/tree_node.hpp",
+      "sha256": "0429afbc1204a75d63e9b83e2431c301a255d6be54fcb64174df95d0ffce6050",
+      "bytes": 4261,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/include/cpdd/utility/validation.hpp",
+      "sha256": "4a0a08cbbbc8271081f04a5ef82f688564c1566830cc365f52978c2a42c6915b",
+      "bytes": 3853,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/LICENSE",
+      "sha256": "4ae228b835015b9cadd76f3ba31bc05918b97448972d33582b1275ddc84bcb08",
+      "bytes": 1100,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/alloc.h",
+      "sha256": "6575364e1473297917589cfe5a52fa6c1a103a4290f3618aee6a2dfde5741cac",
+      "bytes": 10753,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/delayed.h",
+      "sha256": "9c20378d6ffac3d241345b59eec3bca9c563bbb964b4a121fd62f1aaed8dff7f",
+      "bytes": 3536,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/delayed_sequence.h",
+      "sha256": "52ce23c4baebe83eb9ddd95c26f6401a6c2910f13adacc3fe394a221f864f9f4",
+      "bytes": 9586,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/hash_table.h",
+      "sha256": "c1047f96b2d13fd7043dcadb84a920074f3f7a611d31d912efee2ed09b165578",
+      "bytes": 9693,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/internal/atomic_wait.h",
+      "sha256": "61207ea474e3e55038ceddbb085c9012e10bd6dc56766cab763f5cf1c429a07a",
+      "bytes": 14565,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/internal/binary_search.h",
+      "sha256": "9e05c311c9fdd47b8fef20ee9883e129721756817e80f660dda415dcdec1f12b",
+      "bytes": 1612,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/internal/block_allocator.h",
+      "sha256": "e8803f22a463dff9e43360c14d37adaf64fb04bfb14a9d2908836e931d0ed703",
+      "bytes": 7905,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/internal/block_delayed.h",
+      "sha256": "927809754c30dbb8dd8d41548daf32646af09607a65ff0f20f5ad0ee2c93787e",
+      "bytes": 11808,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/internal/bucket_sort.h",
+      "sha256": "3e52d21469333f1518d4efaeef7d4538703fef359b8afa6b6608c401ea2f8b86",
+      "bytes": 5543,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/internal/collect_reduce.h",
+      "sha256": "54f1cb2b8b5df7ec20b51f577e7bd0598ec501eb2892ccaf819869db16e10c66",
+      "bytes": 12904,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/internal/concurrency/acquire_retire.h",
+      "sha256": "d562ea2f67b54ca2b4c335c48d184f2292f4fcfd3b0969e25b664b61519dbbe0",
+      "bytes": 5767,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/internal/concurrency/hazptr_stack.h",
+      "sha256": "57cdd47c8c6a38a5a0ab6e5acdc26318ed99c8c19c2416d627b0bbf67e71bef9",
+      "bytes": 3412,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/internal/counting_sort.h",
+      "sha256": "db056c09bc2e23675a8e1042bd535a76486a78a77ae48b2153c8bc40613963f9",
+      "bytes": 13069,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/internal/debug_uninitialized.h",
+      "sha256": "39705edf8942205f68723ef77d38f1bcddf657e526a08cc2f2650c9095ff1292",
+      "bytes": 5955,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/internal/delayed/common.h",
+      "sha256": "fa0427c59a8ebcf3b7a4085c773e10d5747c20f1eec0591d0d3920d7cf5ff9a6",
+      "bytes": 9344,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/internal/delayed/filter.h",
+      "sha256": "788bb5a52a895312be833ddb79a7c3a554009f06a44bd0701a52248816a92f38",
+      "bytes": 4412,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/internal/delayed/filter_op.h",
+      "sha256": "17768b7e407111a9bb7f09d68c9716fec0b540a3183b5832556f0dd7535814f0",
+      "bytes": 4384,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/internal/delayed/flatten.h",
+      "sha256": "1eabb95b9975e0f725e13cac2be47c9fcbdfb7fb3e233c436da382429b72b814",
+      "bytes": 12415,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/internal/delayed/map.h",
+      "sha256": "076a1f5a7fade527c88cd70071773bece3841a7222bf9b8a4a562a50abbfd886",
+      "bytes": 4268,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/internal/delayed/scan.h",
+      "sha256": "3cedbb387ca5eb7efef84a4cb1f5c8e92fe1d37de7f225e5c622d4fc61d9f0de",
+      "bytes": 6442,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/internal/delayed/terminal.h",
+      "sha256": "3624812031536ccabb7b598489f7f68ad36e04cd24eb3ce6385e9b12200e7d14",
+      "bytes": 6468,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/internal/delayed/zip.h",
+      "sha256": "f85ba267bdd769c3fb0a43b81ecebbe3c8b9c2017bfc06a4960a45d43b94801b",
+      "bytes": 5512,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/internal/file_map.h",
+      "sha256": "e0b3082615aa68f5ab3036334fc557d6e974cb098d77799f5d94eba7bc617988",
+      "bytes": 2821,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/internal/get_time.h",
+      "sha256": "6fcd89092afdba041028fa259e5de144ba33b08451714afbf655d8d43a7e0027",
+      "bytes": 1626,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/internal/group_by.h",
+      "sha256": "b4408cf117b289afce3bde2abd484e98218fbffd2b98fd5b66ea130878ebdca7",
+      "bytes": 15109,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/internal/heap_tree.h",
+      "sha256": "30412db9e1103600d1c77975022b5237df7d525cb85b5f105d5323b74a27db93",
+      "bytes": 1637,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/internal/integer_sort.h",
+      "sha256": "9221c71611138b346be1fa50ec3a57448a3e74d10c9c4b97cbb53fa11a7c13fc",
+      "bytes": 16024,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/internal/memory_size.h",
+      "sha256": "e65363a0b2869db00d554954c60c449106abe314bb1744236b5ab053f50cf0da",
+      "bytes": 3252,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/internal/merge.h",
+      "sha256": "a149c4a5c92ae9be8dce34528aba2064522479471910599172bbc53cd93ea2ff",
+      "bytes": 3585,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/internal/merge_sort.h",
+      "sha256": "f37d71c7bc29e48dcc9ba38f419195a2a3d88c02b1a8309586b0d8343c5f35cf",
+      "bytes": 2248,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/internal/pool_allocator.h",
+      "sha256": "a2a2933846788e8210af1a16f372c70852cbb17c974312d85d3a6420b54700b5",
+      "bytes": 6441,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/internal/posix/file_map_impl_posix.h",
+      "sha256": "51536c5c9495625986775771136da99868c0cf4c30e2974bb42576b389ade219",
+      "bytes": 2306,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/internal/quicksort.h",
+      "sha256": "a35f40e452e359fb10271de62b71e81d6843404528eaf77b45631e758ae58dea",
+      "bytes": 8521,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/internal/sample_sort.h",
+      "sha256": "cb9ab62aca639620ab254d457358410aac8c6f84b26f70b62321ca5e51383a00",
+      "bytes": 11340,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/internal/scheduler_plugins/cilkplus.h",
+      "sha256": "67b3ad340d168648553f618620f12249afaab105208a3349a7681d15bc3e601b",
+      "bytes": 1261,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/internal/scheduler_plugins/omp.h",
+      "sha256": "6f327c9b20070491de0e233e2c8cc8ba610a323fd723044d4134413c99d528bd",
+      "bytes": 2773,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/internal/scheduler_plugins/opencilk.h",
+      "sha256": "a69f6995c1de5d5e28503cabae4b4aa0617a24f4121572da767478a3e575a478",
+      "bytes": 1384,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/internal/scheduler_plugins/sequential.h",
+      "sha256": "1c2a546665d7e394c39e27d6da96fe59232ae703ca9a7903baa2bc552b7f0313",
+      "bytes": 878,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/internal/scheduler_plugins/tbb.h",
+      "sha256": "87818121f86c204da25abd8d49f949e9f992a159411b8ea20dc94ca94341709d",
+      "bytes": 1692,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/internal/sequence_base.h",
+      "sha256": "c68df18e24ebf05ec2dfd8c9669c2d2dc418bd50c6f92b71dc228ca0a154974d",
+      "bytes": 21120,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/internal/sequence_ops.h",
+      "sha256": "d5983c904625b1a8ef85faff58f7d8ff050c3bba4838f5bd9fd3005a9aaed81c",
+      "bytes": 18280,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/internal/stream_delayed.h",
+      "sha256": "0f983b5d16ac5923e1ef37675a4e27e105156460794f7878a0d320fd592a3176",
+      "bytes": 6393,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/internal/transpose.h",
+      "sha256": "2dcbcef81dce52007c994833baed001dd879fd0da70e56e12dcc03ccb9179609",
+      "bytes": 8348,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/internal/uninitialized_sequence.h",
+      "sha256": "3ea001f05cd3f47305f96edadac300220b7332220e7056b83dbbcafb550dfb08",
+      "bytes": 6868,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/internal/uninitialized_storage.h",
+      "sha256": "6d4b073739cfb12f57c905a6dbe8aab4d98a7d6031e4e41102d2c1f69802f827",
+      "bytes": 1731,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/internal/windows/file_map_impl_windows.h",
+      "sha256": "813ddf159d6b5038bf11b14c68361b20949dae57bd47b8663c01845fbc62d198",
+      "bytes": 3475,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/internal/work_stealing_deque.h",
+      "sha256": "b03146921d79db9825bc207b63e23a6444b3fba034b9d3423f7c10a7ecf450ea",
+      "bytes": 3929,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/internal/work_stealing_job.h",
+      "sha256": "6444f3976d72e06a735e455be92549ef0fd3f394691e7a48ecd32ecd13320f9f",
+      "bytes": 1281,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/io.h",
+      "sha256": "23a851cab598d7693fd539e5bc401927cebc690f5818274d87e8390bc2f1ad0e",
+      "bytes": 12016,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/monoid.h",
+      "sha256": "bafe2e1b4318858a2f93f17ab8e8b823ebf51993433455becfe8bd1a9746a2df",
+      "bytes": 11278,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/parallel.h",
+      "sha256": "c693ebafbd6ae641a24732c50fe9049b5f0c3ede3a76d6dc4f7e7fc433994e2f",
+      "bytes": 5937,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/portability.h",
+      "sha256": "bb8b76294a2b15307ad03e3226f9714311a6ec02de6ac935895a910f3098f307",
+      "bytes": 1472,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/primitives.h",
+      "sha256": "fec53474d6daf48e0c7c92e7db5626ff2068f568e4c6b7ae0dc9bcd34670b615",
+      "bytes": 54411,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/random.h",
+      "sha256": "4980e8a95c7b2d539b77b6850215418eafb5d56ff4a7aa2d22e52a3df332e583",
+      "bytes": 5172,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/range.h",
+      "sha256": "1d82689f0c65f1a601ce8f5054375324160a3e33c66eed84b06f24abff4411b6",
+      "bytes": 26334,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/scheduler.h",
+      "sha256": "da4be166edd6362abd4e545a9c87222dcd92cb77089208bda99cb75a976a97df",
+      "bytes": 11420,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/sequence.h",
+      "sha256": "ed4339a7aec0a82473ce4c8610459e7f1df6970f81246c42778dde50578ba6b3",
+      "bytes": 29591,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/slice.h",
+      "sha256": "55e42be391b42cc45f0efdfc4a63121a51f725d78b1d3774903a47ff6719e30e",
+      "bytes": 3434,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/type_traits.h",
+      "sha256": "63daa3a0607d3d84824f94dcf5a0602ce401c3c0a2717615ce77f8f41f5347e7",
+      "bytes": 11697,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "pkd_tree/parlaylib/include/parlay/utilities.h",
+      "sha256": "98356689ca87866ffbc19c7b8c7b282435f701e067d6b6e83e48df6d39e52c62",
+      "bytes": 22842,
+      "base_revision": "62c8839aa6e87b8cbf652a341a472f1fcf789ec0"
+    },
+    {
+      "path": "PAM/copyright",
+      "sha256": "bb79156313d2b2bcd665dba89dc51b73f3c33b00d0563346c82c9a724f327f2c",
+      "bytes": 1151,
+      "base_revision": "3574543ad84c34acb22edbeecb9d11a97a5eb87d"
+    }
+  ]
+}

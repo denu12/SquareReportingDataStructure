@@ -2,11 +2,35 @@
 import argparse
 import json
 import os
+import signal
 from pathlib import Path
 import struct
 import subprocess
 
 ROOT = Path(__file__).resolve().parent
+
+
+def run_backend(cmd, timeout):
+    process=subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True,
+                             start_new_session=True)
+    try:
+        out,err=process.communicate(timeout=timeout)
+    except (subprocess.TimeoutExpired,KeyboardInterrupt):
+        if os.name=='posix':
+            try:os.killpg(process.pid,signal.SIGKILL)
+            except ProcessLookupError:pass
+        else:process.kill()
+        process.communicate()
+        raise
+    if process.returncode:
+        return dict(status='incorrect' if process.returncode==2 else 'error',detail=err.strip())
+    try:
+        row=json.loads(out)
+        if not isinstance(row,dict) or not isinstance(row.get('status'),str):
+            raise ValueError('Expected a JSON object with a status')
+        return row
+    except ValueError:
+        return dict(status='error',detail='Backend returned malformed JSON',stdout_tail=out[-1000:])
 
 # Executables group library variants that share an upstream interface.
 BACKENDS = {
@@ -44,6 +68,9 @@ BACKENDS = {
     'indexicon_mxcif_quadtree': ('indexicon_mxcif', (2,)),
     'indexicon_octree': ('indexicon_oct', (3,)),
     'nanoflann': ('nanoflann', (2,3)),
+    'pam': ('pam', (2,)),
+    'pargeo': ('pargeo', (2,)),
+    'pkd': ('pkd', (2,)),
 }
 
 
@@ -76,19 +103,25 @@ def main():
     names=a.algorithms or [n for n,(_,dims) in BACKENDS.items() if d in dims and executable(a.build,n).is_file()]
     if not names:p.error('No matching built backends')
     failed=False
+    for key in ('OMP_NUM_THREADS','OPENBLAS_NUM_THREADS','MKL_NUM_THREADS','RAYON_NUM_THREADS','PARLAY_NUM_THREADS'):
+        os.environ[key]='1'
     for name in names:
         if d not in BACKENDS[name][1] or not executable(a.build,name).is_file():
             print(json.dumps(dict(algorithm=name,status='unavailable')),flush=True)
             failed=True;continue
+        skip=None
         for rep in range(a.repetitions):
             cmd=[str(executable(a.build,name)),str(a.case),name]+(['--bench'] if a.bench else [])
             try:
-                r=subprocess.run(cmd,capture_output=True,text=True,timeout=a.timeout)
-                row=json.loads(r.stdout) if r.returncode==0 else dict(status='incorrect' if r.returncode==2 else 'error',detail=r.stderr.strip(),algorithm=name)
+                row=dict(status=skip) if skip else run_backend(cmd,a.timeout)
             except subprocess.TimeoutExpired:
                 row=dict(status='timeout',algorithm=name)
+            except OSError as error:
+                row=dict(status='error',detail=str(error))
+            if row['status']=='timeout':skip='skipped_after_timeout'
+            elif row['status']=='error':skip='skipped_after_error'
             failed |= row['status']!='success'
-            print(json.dumps(dict(row,repetition=rep)),flush=True)
+            print(json.dumps(dict(row,algorithm=name,repetition=rep)),flush=True)
     return int(failed)
 
 

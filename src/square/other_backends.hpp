@@ -161,11 +161,14 @@ int other(const Case<D>& data,const std::string& name,bool verify,Clock::time_po
         for(Id i=0;i<data.points.size();++i){auto p=coarse(data.points[i]);cells.push_back(p);order.emplace_back(std::apply([](auto... x){return Code::Encode(x...);},p),i);}
         std::sort(order.begin(),order.end());
         std::unique_ptr<Tree> tree;if(!cells.empty())tree=std::make_unique<Tree>(cells.begin(),cells.end());
+        struct Entry { Id id; Point<D> point; };
+        std::vector<Entry> entries;entries.reserve(order.size());
+        for(const auto& entry:order)entries.push_back({entry.second,data.points[entry.second]});
         return measure<true,D,Id>(data,name,verify,seconds(start),[&](auto& b,auto& hits){
             if(!tree)return;
             for(auto it=tree->range(coarse(b.lo),coarse(b.hi));it!=tree->end();++it){
-                const auto id=order.at(it.source_position()).second;
-                if(b.contains(data.points[id]))hits.push_back(id);
+                const auto& entry=entries[it.source_position()];
+                if(b.contains(entry.point))hits.push_back(entry.id);
             }
         },[](Id i){return i;},"coarse_box_then_exact_box_filter");
     }

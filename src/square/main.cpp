@@ -19,6 +19,8 @@
 #include "indexicon_backends.hpp"
 #elif defined(SQ_OTHER)
 #include "other_backends.hpp"
+#elif defined(SQ_PAM) || defined(SQ_PARGEO) || defined(SQ_PKD)
+#include "rectangle_backends.hpp"
 #endif
 
 namespace square {
@@ -90,6 +92,8 @@ int run(const Case<D>& data, const std::string& name, bool verify) {
     return indexicon<D>(data,name,verify,start);
 #elif defined(SQ_OTHER)
     return other<D>(data,name,verify,start);
+#elif defined(SQ_PAM) || defined(SQ_PARGEO) || defined(SQ_PKD)
+    if constexpr(D==2) return rectangle(data,name,verify,start);
 #else
     if(name=="scan") return measure<true,D,Id>(data,name,verify,0,[&](auto& b,auto& out){
         for(Id i=0;i<data.points.size();++i) if(b.contains(data.points[i]))out.push_back(i);

@@ -5,3 +5,4 @@ Dockerfile text eol=lf
 /historical_data export-ignore
 /data export-ignore
 /results export-ignore
+src/third_party/rectangle/** -text -whitespace

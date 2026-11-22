@@ -43,6 +43,8 @@ in seconds, and the native output type. The actual average result size is
 The runner includes Morton and MortonPlus in 2D and 3D, Boost R-tree variants,
 CGAL, THST, PH-tree, SpaceTreeLib, libspatialindex, Indexicon, PGM, nanoflann,
 and an exhaustive scan control. `--list` shows dimensions and built backends.
+PAM, ParGeo and PKD are also available for 2D squares, with captured dependency
+headers included under `src/third_party/rectangle`.
 Indexicon uses all nine applicable 2D variants and all six applicable 3D
 variants. `-DSQUARE_SIMD=ON` additionally builds the inherited 2D AVX-512
 Morton variant; run that executable only on a host that supports AVX-512.
@@ -57,6 +59,10 @@ Morton variant; run that executable only on a host that supports AVX-512.
 - **Enclosing radius then box filter:** The pinned nanoflann header exposes a
   radius query. Its adapter queries a conservative enclosing radius, then
   checks the square or cube; the extra work is included in its timing.
+- **Local rectangle traversal:** The ParGeo follow-up traverses native tree nodes
+  with a local box reporter. New output identifies this as `local_box_traversal`;
+  it is not an upstream rectangle-reporting API. Historical `native_box` labels
+  remain unchanged in the published raw records.
 
 The disk project's radius-only competitors and dynamic experiments are not
 automatically carried over. Its source snapshot is retained for provenance;
@@ -83,3 +89,11 @@ and [workload tools](tools/README.md) for details.
 Recorded observations from Archie are published in [dated measurement snapshots](measurements/README.md),
 including the [22 November 2026 capture](measurements/2026-11-22/README.md).
 They retain correctness checks, unsuccessful runs, timeouts and reporting contracts.
+
+The PAM/ParGeo/PKD follow-up adapters and captured dependency headers are integrated.
+Their upstream revisions, inherited dependency patches and file hashes are described
+in the [rectangle dependency record](src/third_party/rectangle/README.md).
+New runs skip remaining repetitions after a timeout or backend error and continue
+other algorithms. Incorrect answers remain flagged and can still be timed.
+See the [repository audit](docs/REPOSITORY-AUDIT-2026-11-22.md) for the repair record
+and validation scope.

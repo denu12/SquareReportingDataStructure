@@ -14,3 +14,8 @@ python3 run_theater.py data/squares.bin --algorithms morton boost_rstar
 [prepare_pgm.py](prepare_pgm.py) is invoked by CMake to prepare the inherited
 PGM iterator fixes in the build directory. It leaves the submodule untouched.
 See the [root README](../README.md) for build, correctness and timing commands.
+
+[prepare_pargeo.py](prepare_pargeo.py) makes a build-only header copy that
+qualifies the legacy prefix-scan call through Parlay's public compatibility API.
+The captured dependency headers remain unchanged. It does not change the tree's
+partitioning, search predicates or reporting traversal.

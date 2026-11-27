@@ -12,138 +12,138 @@
     },
     {
       "path": "current/square-full-2d-3d-20261106/2D_ESA_geographical.jsonl.gz",
-      "sha256": "0d7e3838c363afa7103b09d02959fd479eabfd78dcb7f1e1344067a283732d87",
+      "sha256": "927ff16a78ddc731aa6a389f1bd09888adc632af33c2697b021b5c9ad967e4bb",
       "files": 3,
       "source_bytes": 1448875,
-      "compressed_bytes": 118269,
+      "compressed_bytes": 114068,
       "unreadable": []
     },
     {
       "path": "current/square-full-2d-3d-20261106/2D_ESA_graph_embeddings.jsonl.gz",
-      "sha256": "d46ef7533251ee651b885d3b3109ff3a4e0aa8ceb9495ef390da0f4ed64532a7",
+      "sha256": "657a44f660336313a1a17b42361b900fb2e15f489ce52672e69d8bd61d940f56",
       "files": 3,
       "source_bytes": 803926,
-      "compressed_bytes": 63389,
+      "compressed_bytes": 61269,
       "unreadable": []
     },
     {
       "path": "current/square-full-2d-3d-20261106/2D_ESA_uniform_points.jsonl.gz",
-      "sha256": "839413a65a6a9fcb6ca77df25a7513c404c88a51200d8ce49c0407f07c0a81d3",
+      "sha256": "40969645cfe97709f56aa77f21434587e7e3665244cc9ffd4feb830c0639de8e",
       "files": 3,
       "source_bytes": 377960,
-      "compressed_bytes": 29831,
+      "compressed_bytes": 28874,
       "unreadable": []
     },
     {
       "path": "current/square-full-2d-3d-20261106/GeographyLarge.jsonl.gz",
-      "sha256": "6b97f0b37d43e782b6cd9e07e9d32ef6ea7f39049d115f250ea56f9d8cbaed77",
+      "sha256": "d9e819e1815bf82a4fae9b3b8831091f73460f83902e2d2d9fd4e9047c79d783",
       "files": 3,
       "source_bytes": 5208262,
-      "compressed_bytes": 441564,
+      "compressed_bytes": 426011,
       "unreadable": []
     },
     {
       "path": "current/square-full-2d-3d-20261106/Static3D.jsonl.gz",
-      "sha256": "43096049e99f93f5d9f1172f0247c6f62a4315d7b094a74f5e4a912c21defceb",
+      "sha256": "58ac79996d7c73c496132197e910882451bcb91b85d102a0f9ae1d1826364727",
       "files": 3,
       "source_bytes": 4060119,
-      "compressed_bytes": 343525,
+      "compressed_bytes": 297695,
       "unreadable": []
     },
     {
       "path": "current/square-full-2d-3d-20261106/input_scaling.jsonl.gz",
-      "sha256": "c97a2b8c0d289a03dabe2227dd52c7ec119874d6dec68443313897916ea61df8",
+      "sha256": "aec15fc768606cd7aef4672f9c3344186646b3c362ae4fe0b4047773e6680bfd",
       "files": 3,
       "source_bytes": 3165778,
-      "compressed_bytes": 264487,
+      "compressed_bytes": 254840,
       "unreadable": []
     },
     {
       "path": "current/square-full-2d-3d-20261106/input_scaling_3d.jsonl.gz",
-      "sha256": "c3d584cf1108327a001c9ea11d7dc3fc576870bfd335502a779d30b0cb22b9e5",
+      "sha256": "7ffdc92a4fc29ca47a50f8610f49db2c1f07563dc70f703fa5ee78393244219e",
       "files": 3,
       "source_bytes": 2494237,
-      "compressed_bytes": 205555,
+      "compressed_bytes": 178954,
       "unreadable": []
     },
     {
       "path": "current/square-full-2d-3d-20261106/radius_scaling.jsonl.gz",
-      "sha256": "ca1b775a65e94f7a93a95712771b5230c6255bddebc12ab12a40ed4d2a4e715a",
+      "sha256": "64d5011fad6164cd9b94987e2506cc78d8846e88cdb792fbfa4e3dea27c7488b",
       "files": 3,
       "source_bytes": 1908537,
-      "compressed_bytes": 148009,
+      "compressed_bytes": 142513,
       "unreadable": []
     },
     {
       "path": "current/square-full-2d-3d-20261106/radius_scaling_3d.jsonl.gz",
-      "sha256": "7ef64de3aac8b8ef2ea428daf7ea9be7c02012079b91d3c7fdf5de2706173b12",
+      "sha256": "d3c7e1cc3825306ada35ae5fc568f46bc7332862e6a14913531042aca7aea13f",
       "files": 3,
       "source_bytes": 1502697,
-      "compressed_bytes": 115969,
+      "compressed_bytes": 100428,
       "unreadable": []
     },
     {
       "path": "current/square-full-2d-3d-20261106/static.jsonl.gz",
-      "sha256": "1901b52613f5844a2af60a459c192734d98c190d3a824f0c23760f384f9e2715",
+      "sha256": "9c8664e003964deda51ecbc4128ddc7afb85616f6aeeb5cdc89206fde1cf9616",
       "files": 3,
       "source_bytes": 5153815,
-      "compressed_bytes": 436577,
+      "compressed_bytes": 421019,
       "unreadable": []
     },
     {
       "path": "current/square-rectangle-followup-2d-20261113/2D_ESA_geographical.jsonl.gz",
-      "sha256": "668fc92485d44942d3526d1aac63b215d467ddd0ff0e07eb762ab5bf971b87dd",
+      "sha256": "17d22c407d02121779c20374a40d1b00602bd84f182cea041acce909d9942b2b",
       "files": 1,
       "source_bytes": 136631,
-      "compressed_bytes": 11036,
+      "compressed_bytes": 7664,
       "unreadable": []
     },
     {
       "path": "current/square-rectangle-followup-2d-20261113/2D_ESA_graph_embeddings.jsonl.gz",
-      "sha256": "549a09a34d7717d9a268575a8c34f84a6bbc619e5d9a44b2a9f7e37409e8adf2",
+      "sha256": "97a6b24e9a155c63daf8dd7fb43e03ff9ebfa0897ee1ebb2020995d6b5600633",
       "files": 1,
       "source_bytes": 75928,
-      "compressed_bytes": 6257,
+      "compressed_bytes": 4446,
       "unreadable": []
     },
     {
       "path": "current/square-rectangle-followup-2d-20261113/2D_ESA_uniform_points.jsonl.gz",
-      "sha256": "b6e36100175210f7680d75769ec30dd2bd741a6f5a8f64a7883eaac9074cce7e",
+      "sha256": "a2df43d99ba28e3dc8204008c5437484f32873568dfe8ac7af34f2851cf3109c",
       "files": 1,
       "source_bytes": 35711,
-      "compressed_bytes": 3154,
+      "compressed_bytes": 2334,
       "unreadable": []
     },
     {
       "path": "current/square-rectangle-followup-2d-20261113/GeographyLarge.jsonl.gz",
-      "sha256": "4c50315661959bd3c3bfbeb1b9a1ce30450c20b60c4dc960d4f1cc42a2882533",
+      "sha256": "3ddc7e147da8522a70f405710c1ad736f4f49c0e59dd4754501769ff7ff8e956",
       "files": 1,
       "source_bytes": 495114,
-      "compressed_bytes": 40221,
+      "compressed_bytes": 26463,
       "unreadable": []
     },
     {
       "path": "current/square-rectangle-followup-2d-20261113/input_scaling.jsonl.gz",
-      "sha256": "c1795cf1d0fabcd6a71a4258a1612073d3be0b9f0839c9f64b850fddab2deefd",
+      "sha256": "1bbac98d1d0ffaec756151a8cb75183e7a0508defb25e9e1b200647c770b1bac",
       "files": 1,
       "source_bytes": 302996,
-      "compressed_bytes": 24553,
+      "compressed_bytes": 16277,
       "unreadable": []
     },
     {
       "path": "current/square-rectangle-followup-2d-20261113/radius_scaling.jsonl.gz",
-      "sha256": "362e2a1082b431c32e46a523550711e76546c68e45b2df0cddab2440db91d6c0",
+      "sha256": "1a6fe5ffb1697357f172e6f1b09516136b0df44c6caa7e31cf2055a69beaf5ce",
       "files": 1,
       "source_bytes": 181755,
-      "compressed_bytes": 13526,
+      "compressed_bytes": 9030,
       "unreadable": []
     },
     {
       "path": "current/square-rectangle-followup-2d-20261113/static.jsonl.gz",
-      "sha256": "a76de316c61ce425955ee7baec18361d12b5e102c7c697f1b35ed663c584ad8d",
+      "sha256": "62a2a3513d2a20cbe85ded981b038cba4c100126a5a864f30ce3bdc1525e017f",
       "files": 1,
       "source_bytes": 489570,
-      "compressed_bytes": 38928,
+      "compressed_bytes": 25365,
       "unreadable": []
     }
   ],
@@ -153,9 +153,11 @@
     "An active run is a partial snapshot, not a completed campaign.",
     "State rows and job artifacts overlap; do not count both.",
     "Input binaries, software builds, private documents and caches are excluded.",
-    "Local home paths, host/user names and private IP addresses are redacted."
+    "Local home paths, host/user names and private IP addresses are redacted.",
+    "Superseded disk measurements removed at user request. Edited records have content_sha256 and superseded_rows_deleted; original_sha256 remains the pre-redaction, pre-pruning source identity."
   ],
   "snapshot_finished_utc": "2026-11-22T18:53:03.306421+00:00",
   "total_files": 44,
-  "total_phase_rows": 0
+  "total_phase_rows": 0,
+  "superseded_results_pruned_unix": 1795770288.4114792
 }

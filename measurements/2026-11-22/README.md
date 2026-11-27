@@ -1,6 +1,13 @@
 # Square and cube measurements captured on 22 November 2026
 
-This snapshot contains **44 recorded files in 18 bundles**, totaling **2.3 MB compressed**. It preserves **65,950 job rows**, including correctness checks, screening, final repetitions and unsuccessful outcomes. There are **48,260 successful final-repetition rows**, not that many independent algorithm/case pairs.
+Updated on 27 November after campaign-scoped cleanup: **44 retained files
+in 18 bundles (2.13 MB compressed)**. Recorded job rows: 60,827; successful final repetitions: 44,435. The historical capture description below records the original capture.
+Superseded observations were removed only for exact campaign/algorithm/case
+matches. Unsuperseded 3D data was restored from the original archive. Updated
+hashes and counts are in index.json and verification.json. Newer replacements
+are in the [27 November snapshot](../2026-11-27/README.md).
+
+The original capture contained **44 recorded files in 18 bundles**, totaling **2.3 MB compressed**. It originally preserved **65,950 job rows**, including correctness checks, screening, final repetitions and unsuccessful outcomes, with **48,260 successful final-repetition rows**. These are not independent algorithm/case pairs.
 
 Capture interval: **18:52:56–18:53:03 UTC**. Both captured queues report `complete`:
 

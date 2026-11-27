@@ -1,5 +1,7 @@
 # Recorded measurements
 
+- [27 November 2026](2026-11-27/README.md): refreshed complete square/cube data, including corrected 2D PGM/ParGeo and 3D PGM/PSI measurements from shared controllers. Superseded observations have been removed by exact campaign identity.
+
 - [22 November 2026](2026-11-22/README.md): the full 2D/3D square/cube campaign and the additional 2D rectangle-reporting campaign captured from Archie.
 
 Snapshots preserve successful timings, failures, timeouts, correctness admissions and queue status. Input datasets and generated executables are excluded. Local home paths, host/user fields and private IP addresses are redacted.

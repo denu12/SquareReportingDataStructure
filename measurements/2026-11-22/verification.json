@@ -1,7 +1,7 @@
 {
   "verified_bundles": 18,
   "verified_records": 44,
-  "compressed_bytes": 2315130,
+  "compressed_bytes": 2127530,
   "capture_started_utc": "2026-11-22T18:52:56.101553+00:00",
   "capture_finished_utc": "2026-11-22T18:53:03.306421+00:00",
   "failures": [],
@@ -10,13 +10,13 @@
     {
       "source": "current",
       "path": "square-full-2d-3d-20261106/2D_ESA_geographical/jobs.jsonl",
-      "rows": 3503,
+      "rows": 3390,
       "invalid_lines": 0,
       "outcomes": {
-        "correctness:success": 31,
-        "screen:success": 860,
+        "correctness:success": 30,
+        "screen:success": 832,
         "screen:timeout": 8,
-        "final:success": 2580,
+        "final:success": 2496,
         "final:timeout": 24
       },
       "algorithms": [
@@ -42,7 +42,6 @@
         "morton_plus",
         "morton_simd",
         "nanoflann",
-        "pgm",
         "phtree",
         "psi_kd",
         "psi_orth",
@@ -56,13 +55,13 @@
     {
       "source": "current",
       "path": "square-full-2d-3d-20261106/2D_ESA_graph_embeddings/jobs.jsonl",
-      "rows": 1891,
+      "rows": 1830,
       "invalid_lines": 0,
       "outcomes": {
-        "correctness:success": 31,
-        "screen:success": 459,
+        "correctness:success": 30,
+        "screen:success": 444,
         "screen:timeout": 6,
-        "final:success": 1377,
+        "final:success": 1332,
         "final:timeout": 18
       },
       "algorithms": [
@@ -88,7 +87,6 @@
         "morton_plus",
         "morton_simd",
         "nanoflann",
-        "pgm",
         "phtree",
         "psi_kd",
         "psi_orth",
@@ -102,13 +100,13 @@
     {
       "source": "current",
       "path": "square-full-2d-3d-20261106/2D_ESA_uniform_points/jobs.jsonl",
-      "rows": 899,
+      "rows": 870,
       "invalid_lines": 0,
       "outcomes": {
-        "correctness:success": 31,
-        "screen:success": 211,
+        "correctness:success": 30,
+        "screen:success": 204,
         "screen:timeout": 6,
-        "final:success": 639,
+        "final:success": 618,
         "final:timeout": 12
       },
       "algorithms": [
@@ -134,7 +132,6 @@
         "morton_plus",
         "morton_simd",
         "nanoflann",
-        "pgm",
         "phtree",
         "psi_kd",
         "psi_orth",
@@ -148,14 +145,14 @@
     {
       "source": "current",
       "path": "square-full-2d-3d-20261106/GeographyLarge/jobs.jsonl",
-      "rows": 12431,
+      "rows": 12030,
       "invalid_lines": 0,
       "outcomes": {
-        "correctness:success": 30,
+        "correctness:success": 29,
         "correctness:timeout": 1,
-        "screen:success": 3000,
+        "screen:success": 2900,
         "screen:timeout": 100,
-        "final:success": 9000,
+        "final:success": 8700,
         "final:timeout": 300
       },
       "algorithms": [
@@ -181,7 +178,6 @@
         "morton_plus",
         "morton_simd",
         "nanoflann",
-        "pgm",
         "phtree",
         "psi_kd",
         "psi_orth",
@@ -195,13 +191,13 @@
     {
       "source": "current",
       "path": "square-full-2d-3d-20261106/Static3D/jobs.jsonl",
-      "rows": 9624,
+      "rows": 8421,
       "invalid_lines": 0,
       "outcomes": {
-        "correctness:success": 24,
-        "screen:success": 2398,
+        "correctness:success": 21,
+        "screen:success": 2098,
         "screen:timeout": 2,
-        "final:success": 7200
+        "final:success": 6300
       },
       "algorithms": [
         "boost_linear",
@@ -221,25 +217,22 @@
         "morton_3d",
         "morton_plus_3d",
         "nanoflann",
-        "pgm",
         "phtree",
         "psi_kd",
         "psi_orth",
-        "psi_spac_h",
-        "psi_spac_z",
         "scan"
       ]
     },
     {
       "source": "current",
       "path": "square-full-2d-3d-20261106/input_scaling/jobs.jsonl",
-      "rows": 7471,
+      "rows": 7230,
       "invalid_lines": 0,
       "outcomes": {
-        "correctness:success": 31,
-        "screen:success": 1715,
+        "correctness:success": 30,
+        "screen:success": 1655,
         "screen:timeout": 145,
-        "final:success": 5369,
+        "final:success": 5189,
         "final:timeout": 196,
         "final:oom": 15
       },
@@ -266,7 +259,6 @@
         "morton_plus",
         "morton_simd",
         "nanoflann",
-        "pgm",
         "phtree",
         "psi_kd",
         "psi_orth",
@@ -280,13 +272,13 @@
     {
       "source": "current",
       "path": "square-full-2d-3d-20261106/input_scaling_3d/jobs.jsonl",
-      "rows": 5784,
+      "rows": 5061,
       "invalid_lines": 0,
       "outcomes": {
-        "correctness:success": 24,
-        "screen:success": 1334,
-        "screen:timeout": 106,
-        "final:success": 4320
+        "correctness:success": 21,
+        "screen:success": 1205,
+        "screen:timeout": 55,
+        "final:success": 3780
       },
       "algorithms": [
         "boost_linear",
@@ -306,26 +298,23 @@
         "morton_3d",
         "morton_plus_3d",
         "nanoflann",
-        "pgm",
         "phtree",
         "psi_kd",
         "psi_orth",
-        "psi_spac_h",
-        "psi_spac_z",
         "scan"
       ]
     },
     {
       "source": "current",
       "path": "square-full-2d-3d-20261106/radius_scaling/jobs.jsonl",
-      "rows": 4371,
+      "rows": 4230,
       "invalid_lines": 0,
       "outcomes": {
-        "correctness:success": 30,
+        "correctness:success": 29,
         "correctness:timeout": 1,
-        "screen:success": 1025,
+        "screen:success": 990,
         "screen:timeout": 60,
-        "final:success": 3150,
+        "final:success": 3045,
         "final:timeout": 105
       },
       "algorithms": [
@@ -351,7 +340,6 @@
         "morton_plus",
         "morton_simd",
         "nanoflann",
-        "pgm",
         "phtree",
         "psi_kd",
         "psi_orth",
@@ -365,13 +353,13 @@
     {
       "source": "current",
       "path": "square-full-2d-3d-20261106/radius_scaling_3d/jobs.jsonl",
-      "rows": 3384,
+      "rows": 2961,
       "invalid_lines": 0,
       "outcomes": {
-        "correctness:success": 24,
-        "screen:success": 810,
+        "correctness:success": 21,
+        "screen:success": 705,
         "screen:timeout": 30,
-        "final:success": 2520
+        "final:success": 2205
       },
       "algorithms": [
         "boost_linear",
@@ -391,26 +379,23 @@
         "morton_3d",
         "morton_plus_3d",
         "nanoflann",
-        "pgm",
         "phtree",
         "psi_kd",
         "psi_orth",
-        "psi_spac_h",
-        "psi_spac_z",
         "scan"
       ]
     },
     {
       "source": "current",
       "path": "square-full-2d-3d-20261106/static/jobs.jsonl",
-      "rows": 12431,
+      "rows": 12030,
       "invalid_lines": 0,
       "outcomes": {
-        "correctness:success": 30,
+        "correctness:success": 29,
         "correctness:timeout": 1,
-        "screen:success": 2999,
+        "screen:success": 2899,
         "screen:timeout": 101,
-        "final:success": 9000,
+        "final:success": 8700,
         "final:timeout": 300
       },
       "algorithms": [
@@ -436,7 +421,6 @@
         "morton_plus",
         "morton_simd",
         "nanoflann",
-        "pgm",
         "phtree",
         "psi_kd",
         "psi_orth",
@@ -450,112 +434,105 @@
     {
       "source": "current",
       "path": "square-rectangle-followup-2d-20261113/2D_ESA_geographical/jobs.jsonl",
-      "rows": 339,
+      "rows": 226,
       "invalid_lines": 0,
       "outcomes": {
-        "correctness:success": 3,
-        "screen:success": 84,
-        "final:success": 252
+        "correctness:success": 2,
+        "screen:success": 56,
+        "final:success": 168
       },
       "algorithms": [
         "pam",
-        "pargeo",
         "pkd"
       ]
     },
     {
       "source": "current",
       "path": "square-rectangle-followup-2d-20261113/2D_ESA_graph_embeddings/jobs.jsonl",
-      "rows": 183,
+      "rows": 122,
       "invalid_lines": 0,
       "outcomes": {
-        "correctness:success": 3,
-        "screen:success": 45,
-        "final:success": 135
+        "correctness:success": 2,
+        "screen:success": 30,
+        "final:success": 90
       },
       "algorithms": [
         "pam",
-        "pargeo",
         "pkd"
       ]
     },
     {
       "source": "current",
       "path": "square-rectangle-followup-2d-20261113/2D_ESA_uniform_points/jobs.jsonl",
-      "rows": 87,
+      "rows": 58,
       "invalid_lines": 0,
       "outcomes": {
-        "correctness:success": 3,
-        "screen:success": 21,
-        "final:success": 63
+        "correctness:success": 2,
+        "screen:success": 14,
+        "final:success": 42
       },
       "algorithms": [
         "pam",
-        "pargeo",
         "pkd"
       ]
     },
     {
       "source": "current",
       "path": "square-rectangle-followup-2d-20261113/GeographyLarge/jobs.jsonl",
-      "rows": 1203,
+      "rows": 802,
       "invalid_lines": 0,
       "outcomes": {
-        "correctness:success": 3,
-        "screen:success": 300,
-        "final:success": 900
+        "correctness:success": 2,
+        "screen:success": 200,
+        "final:success": 600
       },
       "algorithms": [
         "pam",
-        "pargeo",
         "pkd"
       ]
     },
     {
       "source": "current",
       "path": "square-rectangle-followup-2d-20261113/input_scaling/jobs.jsonl",
-      "rows": 723,
+      "rows": 482,
       "invalid_lines": 0,
       "outcomes": {
-        "correctness:success": 3,
-        "screen:success": 180,
-        "final:success": 540
+        "correctness:success": 2,
+        "screen:success": 120,
+        "final:success": 360
       },
       "algorithms": [
         "pam",
-        "pargeo",
         "pkd"
       ]
     },
     {
       "source": "current",
       "path": "square-rectangle-followup-2d-20261113/radius_scaling/jobs.jsonl",
-      "rows": 423,
+      "rows": 282,
       "invalid_lines": 0,
       "outcomes": {
-        "correctness:success": 3,
-        "screen:success": 105,
-        "final:success": 315
+        "correctness:success": 2,
+        "screen:success": 70,
+        "final:success": 210
       },
       "algorithms": [
         "pam",
-        "pargeo",
         "pkd"
       ]
     },
     {
       "source": "current",
       "path": "square-rectangle-followup-2d-20261113/static/jobs.jsonl",
-      "rows": 1203,
+      "rows": 802,
       "invalid_lines": 0,
       "outcomes": {
-        "correctness:success": 3,
-        "screen:success": 300,
-        "final:success": 900
+        "correctness:success": 2,
+        "screen:success": 200,
+        "final:success": 600
       },
       "algorithms": [
         "pam",
-        "pargeo",
         "pkd"
       ]
     }

@@ -1,0 +1,153 @@
+{
+  "started_utc": "2026-11-27T08:54:59.791062+00:00",
+  "files": {
+    "square": {
+      "files": 33,
+      "bytes": 27883827
+    }
+  },
+  "trimmed_partial_jsonl_tails": [],
+  "queues": {
+    "square/square-full-2d-3d-20261106": {
+      "status": "complete",
+      "cpu": 1,
+      "workers": 1,
+      "started_unix": 1793957638.575907,
+      "updated_unix": 1794495353.7636132,
+      "completed": [
+        "input_scaling",
+        "radius_scaling",
+        "static",
+        "GeographyLarge",
+        "input_scaling_3d",
+        "radius_scaling_3d",
+        "Static3D",
+        "2D_ESA_graph_embeddings",
+        "2D_ESA_uniform_points",
+        "2D_ESA_geographical"
+      ],
+      "counts": {
+        "correctness": 289,
+        "correctness_success": 286,
+        "screen": 15375,
+        "screen_success": 14811,
+        "screen_timeout": 564,
+        "final": 46125,
+        "final_success": 45155,
+        "final_timeout": 955,
+        "final_oom": 15,
+        "correctness_timeout": 3
+      },
+      "dimensions": [
+        2,
+        3
+      ],
+      "revision": "9cd049a84f63cd4d3ee36eeb08a8adedce7eaff5"
+    },
+    "square/square-rectangle-followup-2d-20261113": {
+      "status": "complete",
+      "dimensions": [
+        2
+      ],
+      "cpu": 1,
+      "workers": 1,
+      "started_unix": 1794569908.443455,
+      "updated_unix": 1794591129.4853075,
+      "completed": [
+        "input_scaling",
+        "radius_scaling",
+        "static",
+        "GeographyLarge",
+        "2D_ESA_graph_embeddings",
+        "2D_ESA_uniform_points",
+        "2D_ESA_geographical"
+      ],
+      "counts": {
+        "correctness": 21,
+        "correctness_success": 21,
+        "screen": 1035,
+        "screen_success": 1035,
+        "final": 3105,
+        "final_success": 3105
+      }
+    }
+  },
+  "finished_utc": "2026-11-27T08:55:00.275467+00:00",
+  "shared_controller_filter": {
+    "filter": "geometry == square",
+    "started_utc": "2026-11-27T08:56:54.514080+00:00",
+    "files": [
+      {
+        "path": "_queue-disk-adapters-parity-20261115/2D_ESA_geographical/jobs.jsonl",
+        "source_original_sha256": "a500666b1f9fda6270ad62608fda770aa1b0a3f7f12a40af2e9adc11147e78f3",
+        "source_original_bytes": 904355,
+        "captured_rows": 226,
+        "filtered_sha256": "35334c9122f09982c01a3dd117ac36cc66673ddc3c197c38e266a0cd7ab35250"
+      },
+      {
+        "path": "_queue-disk-adapters-parity-20261115/2D_ESA_graph_embeddings/jobs.jsonl",
+        "source_original_sha256": "aba620caff295c8f4b7e8c5cbf9c9adb3c328678cdccb50cdacf4739a7418448",
+        "source_original_bytes": 495610,
+        "captured_rows": 122,
+        "filtered_sha256": "6bf4cbb1714d49eab78f5e357db3e8a0c5205eec52a979b7ec562da8355931fc"
+      },
+      {
+        "path": "_queue-disk-adapters-parity-20261115/2D_ESA_uniform_points/jobs.jsonl",
+        "source_original_sha256": "17ade2f02048177917983e55c5e2a7f0a7d4e6e0b9bd5c245d2139124fa4ba55",
+        "source_original_bytes": 232297,
+        "captured_rows": 58,
+        "filtered_sha256": "6b566a5d6ac6a08333347f605c8a58d2c804f7372d71f494eeef2cd2f7007b8e"
+      },
+      {
+        "path": "_queue-disk-adapters-parity-20261115/GeographyLarge/jobs.jsonl",
+        "source_original_sha256": "f40a65b04741ce0ed714b5642c4b3786acd2d1ce9d5425a613ab75346dcb4615",
+        "source_original_bytes": 3239488,
+        "captured_rows": 802,
+        "filtered_sha256": "b7fe817c61ff9313c1d65b7b0d55c916e44dff98fe8a9d07b6f923a257f3549f"
+      },
+      {
+        "path": "_queue-disk-adapters-parity-20261115/input_scaling/jobs.jsonl",
+        "source_original_sha256": "8a32db6a952df6f70d1299d381b0bc9be833237fd34147cdfcd2d56209410494",
+        "source_original_bytes": 1948965,
+        "captured_rows": 482,
+        "filtered_sha256": "62400b184116887d3f24c3a068e716244fdd92109c3240cd44adfc9f3a14ea1c"
+      },
+      {
+        "path": "_queue-disk-adapters-parity-20261115/radius_scaling/jobs.jsonl",
+        "source_original_sha256": "776a1f2af5c123d8c2bc5d7ec1e1b67f8abfc387f824ede29650de34c0b9fc1c",
+        "source_original_bytes": 1183200,
+        "captured_rows": 282,
+        "filtered_sha256": "54bc526aaf77c54c1eab3b1d3eb6a6d6bfdb960deff17beea9c9bf3581ba7c02"
+      },
+      {
+        "path": "_queue-disk-adapters-parity-20261115/static/jobs.jsonl",
+        "source_original_sha256": "84f4c79144ccb4ca163671b53e97bb8775a0748c907c5b5e22c5cd210ec6486c",
+        "source_original_bytes": 3265146,
+        "captured_rows": 802,
+        "filtered_sha256": "332c459ebbc4e4438925476a557e6351145c684c7ad33c00b9ff8876ca160f47"
+      },
+      {
+        "path": "_queue-ph-psi-2d-3d-20261115/Static3D/jobs.jsonl",
+        "source_original_sha256": "a5aa78efd349af44143b2190cf7d36543696efefd88327ba10b245560392402b",
+        "source_original_bytes": 2124382,
+        "captured_rows": 1203,
+        "filtered_sha256": "bf7cb90c5ae68d5446dbe6b43cbcf8a8b7a790a553fb3da5ddbe66446b2626e3"
+      },
+      {
+        "path": "_queue-ph-psi-2d-3d-20261115/input_scaling_3d/jobs.jsonl",
+        "source_original_sha256": "d331ff6c6d2be2e7ca5bac58e5ba94cc59f3b02261ee0803f8f60a27a2359806",
+        "source_original_bytes": 1277073,
+        "captured_rows": 723,
+        "filtered_sha256": "84125d7eeaa661e7c35e7fe8ab4beb63c259dffa7292a4e5874e132dae95c7d1"
+      },
+      {
+        "path": "_queue-ph-psi-2d-3d-20261115/radius_scaling_3d/jobs.jsonl",
+        "source_original_sha256": "178a9cb8158bfe6b22f11ed0553a3e67181fff125c55d4a099e64a6ac30caf10",
+        "source_original_bytes": 779149,
+        "captured_rows": 423,
+        "filtered_sha256": "a522c0db1565d6d067ce6bff29be807d7f22f3b2cbbdcd4e57c9ae510f37d457"
+      }
+    ],
+    "finished_utc": "2026-11-27T08:56:54.690679+00:00"
+  }
+}

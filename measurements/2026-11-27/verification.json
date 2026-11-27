@@ -1,0 +1,727 @@
+{
+  "verified_bundles": 29,
+  "verified_records": 44,
+  "compressed_bytes": 2289915,
+  "capture_started_utc": "2026-11-27T09:02:24.167527+00:00",
+  "capture_finished_utc": "2026-11-27T09:02:28.348497+00:00",
+  "failures": [],
+  "sensitive_paths": [],
+  "jsonl_artifacts": [
+    {
+      "source": "current",
+      "path": "square-full-2d-3d-20261106/2D_ESA_geographical/jobs.jsonl",
+      "rows": 3390,
+      "invalid_lines": 0,
+      "outcomes": {
+        "correctness:success": 30,
+        "screen:success": 832,
+        "screen:timeout": 8,
+        "final:success": 2496,
+        "final:timeout": 24
+      },
+      "algorithms": [
+        "boost_linear",
+        "boost_quadratic",
+        "boost_rstar",
+        "cgal_kd",
+        "cgal_range",
+        "indexicon_kdtree_adaptive",
+        "indexicon_kdtree_longest_axis",
+        "indexicon_kdtree_round_robin",
+        "indexicon_mxcif_quadtree",
+        "indexicon_quadtree_longest_axis",
+        "indexicon_quadtree_pr",
+        "indexicon_quadtree_pseudo_median",
+        "indexicon_rtree_mbr",
+        "indexicon_rtree_point",
+        "lsi_linear",
+        "lsi_quadratic",
+        "lsi_rstar",
+        "lsi_str",
+        "morton",
+        "morton_plus",
+        "morton_simd",
+        "nanoflann",
+        "phtree",
+        "psi_kd",
+        "psi_orth",
+        "psi_spac_h",
+        "psi_spac_z",
+        "scan",
+        "thst_quadtree",
+        "thst_rtree"
+      ]
+    },
+    {
+      "source": "current",
+      "path": "square-full-2d-3d-20261106/2D_ESA_graph_embeddings/jobs.jsonl",
+      "rows": 1830,
+      "invalid_lines": 0,
+      "outcomes": {
+        "correctness:success": 30,
+        "screen:success": 444,
+        "screen:timeout": 6,
+        "final:success": 1332,
+        "final:timeout": 18
+      },
+      "algorithms": [
+        "boost_linear",
+        "boost_quadratic",
+        "boost_rstar",
+        "cgal_kd",
+        "cgal_range",
+        "indexicon_kdtree_adaptive",
+        "indexicon_kdtree_longest_axis",
+        "indexicon_kdtree_round_robin",
+        "indexicon_mxcif_quadtree",
+        "indexicon_quadtree_longest_axis",
+        "indexicon_quadtree_pr",
+        "indexicon_quadtree_pseudo_median",
+        "indexicon_rtree_mbr",
+        "indexicon_rtree_point",
+        "lsi_linear",
+        "lsi_quadratic",
+        "lsi_rstar",
+        "lsi_str",
+        "morton",
+        "morton_plus",
+        "morton_simd",
+        "nanoflann",
+        "phtree",
+        "psi_kd",
+        "psi_orth",
+        "psi_spac_h",
+        "psi_spac_z",
+        "scan",
+        "thst_quadtree",
+        "thst_rtree"
+      ]
+    },
+    {
+      "source": "current",
+      "path": "square-full-2d-3d-20261106/2D_ESA_uniform_points/jobs.jsonl",
+      "rows": 870,
+      "invalid_lines": 0,
+      "outcomes": {
+        "correctness:success": 30,
+        "screen:success": 204,
+        "screen:timeout": 6,
+        "final:success": 618,
+        "final:timeout": 12
+      },
+      "algorithms": [
+        "boost_linear",
+        "boost_quadratic",
+        "boost_rstar",
+        "cgal_kd",
+        "cgal_range",
+        "indexicon_kdtree_adaptive",
+        "indexicon_kdtree_longest_axis",
+        "indexicon_kdtree_round_robin",
+        "indexicon_mxcif_quadtree",
+        "indexicon_quadtree_longest_axis",
+        "indexicon_quadtree_pr",
+        "indexicon_quadtree_pseudo_median",
+        "indexicon_rtree_mbr",
+        "indexicon_rtree_point",
+        "lsi_linear",
+        "lsi_quadratic",
+        "lsi_rstar",
+        "lsi_str",
+        "morton",
+        "morton_plus",
+        "morton_simd",
+        "nanoflann",
+        "phtree",
+        "psi_kd",
+        "psi_orth",
+        "psi_spac_h",
+        "psi_spac_z",
+        "scan",
+        "thst_quadtree",
+        "thst_rtree"
+      ]
+    },
+    {
+      "source": "current",
+      "path": "square-full-2d-3d-20261106/GeographyLarge/jobs.jsonl",
+      "rows": 12030,
+      "invalid_lines": 0,
+      "outcomes": {
+        "correctness:success": 29,
+        "correctness:timeout": 1,
+        "screen:success": 2900,
+        "screen:timeout": 100,
+        "final:success": 8700,
+        "final:timeout": 300
+      },
+      "algorithms": [
+        "boost_linear",
+        "boost_quadratic",
+        "boost_rstar",
+        "cgal_kd",
+        "cgal_range",
+        "indexicon_kdtree_adaptive",
+        "indexicon_kdtree_longest_axis",
+        "indexicon_kdtree_round_robin",
+        "indexicon_mxcif_quadtree",
+        "indexicon_quadtree_longest_axis",
+        "indexicon_quadtree_pr",
+        "indexicon_quadtree_pseudo_median",
+        "indexicon_rtree_mbr",
+        "indexicon_rtree_point",
+        "lsi_linear",
+        "lsi_quadratic",
+        "lsi_rstar",
+        "lsi_str",
+        "morton",
+        "morton_plus",
+        "morton_simd",
+        "nanoflann",
+        "phtree",
+        "psi_kd",
+        "psi_orth",
+        "psi_spac_h",
+        "psi_spac_z",
+        "scan",
+        "thst_quadtree",
+        "thst_rtree"
+      ]
+    },
+    {
+      "source": "current",
+      "path": "square-full-2d-3d-20261106/Static3D/jobs.jsonl",
+      "rows": 8421,
+      "invalid_lines": 0,
+      "outcomes": {
+        "correctness:success": 21,
+        "screen:success": 2098,
+        "screen:timeout": 2,
+        "final:success": 6300
+      },
+      "algorithms": [
+        "boost_linear",
+        "boost_quadratic",
+        "boost_rstar",
+        "cgal_kd",
+        "indexicon_kdtree_adaptive",
+        "indexicon_kdtree_longest_axis",
+        "indexicon_kdtree_round_robin",
+        "indexicon_octree",
+        "indexicon_rtree_mbr",
+        "indexicon_rtree_point",
+        "lsi_linear",
+        "lsi_quadratic",
+        "lsi_rstar",
+        "lsi_str",
+        "morton_3d",
+        "morton_plus_3d",
+        "nanoflann",
+        "phtree",
+        "psi_kd",
+        "psi_orth",
+        "scan"
+      ]
+    },
+    {
+      "source": "current",
+      "path": "square-full-2d-3d-20261106/input_scaling/jobs.jsonl",
+      "rows": 7230,
+      "invalid_lines": 0,
+      "outcomes": {
+        "correctness:success": 30,
+        "screen:success": 1655,
+        "screen:timeout": 145,
+        "final:success": 5189,
+        "final:timeout": 196,
+        "final:oom": 15
+      },
+      "algorithms": [
+        "boost_linear",
+        "boost_quadratic",
+        "boost_rstar",
+        "cgal_kd",
+        "cgal_range",
+        "indexicon_kdtree_adaptive",
+        "indexicon_kdtree_longest_axis",
+        "indexicon_kdtree_round_robin",
+        "indexicon_mxcif_quadtree",
+        "indexicon_quadtree_longest_axis",
+        "indexicon_quadtree_pr",
+        "indexicon_quadtree_pseudo_median",
+        "indexicon_rtree_mbr",
+        "indexicon_rtree_point",
+        "lsi_linear",
+        "lsi_quadratic",
+        "lsi_rstar",
+        "lsi_str",
+        "morton",
+        "morton_plus",
+        "morton_simd",
+        "nanoflann",
+        "phtree",
+        "psi_kd",
+        "psi_orth",
+        "psi_spac_h",
+        "psi_spac_z",
+        "scan",
+        "thst_quadtree",
+        "thst_rtree"
+      ]
+    },
+    {
+      "source": "current",
+      "path": "square-full-2d-3d-20261106/input_scaling_3d/jobs.jsonl",
+      "rows": 5061,
+      "invalid_lines": 0,
+      "outcomes": {
+        "correctness:success": 21,
+        "screen:success": 1205,
+        "screen:timeout": 55,
+        "final:success": 3780
+      },
+      "algorithms": [
+        "boost_linear",
+        "boost_quadratic",
+        "boost_rstar",
+        "cgal_kd",
+        "indexicon_kdtree_adaptive",
+        "indexicon_kdtree_longest_axis",
+        "indexicon_kdtree_round_robin",
+        "indexicon_octree",
+        "indexicon_rtree_mbr",
+        "indexicon_rtree_point",
+        "lsi_linear",
+        "lsi_quadratic",
+        "lsi_rstar",
+        "lsi_str",
+        "morton_3d",
+        "morton_plus_3d",
+        "nanoflann",
+        "phtree",
+        "psi_kd",
+        "psi_orth",
+        "scan"
+      ]
+    },
+    {
+      "source": "current",
+      "path": "square-full-2d-3d-20261106/radius_scaling/jobs.jsonl",
+      "rows": 4230,
+      "invalid_lines": 0,
+      "outcomes": {
+        "correctness:success": 29,
+        "correctness:timeout": 1,
+        "screen:success": 990,
+        "screen:timeout": 60,
+        "final:success": 3045,
+        "final:timeout": 105
+      },
+      "algorithms": [
+        "boost_linear",
+        "boost_quadratic",
+        "boost_rstar",
+        "cgal_kd",
+        "cgal_range",
+        "indexicon_kdtree_adaptive",
+        "indexicon_kdtree_longest_axis",
+        "indexicon_kdtree_round_robin",
+        "indexicon_mxcif_quadtree",
+        "indexicon_quadtree_longest_axis",
+        "indexicon_quadtree_pr",
+        "indexicon_quadtree_pseudo_median",
+        "indexicon_rtree_mbr",
+        "indexicon_rtree_point",
+        "lsi_linear",
+        "lsi_quadratic",
+        "lsi_rstar",
+        "lsi_str",
+        "morton",
+        "morton_plus",
+        "morton_simd",
+        "nanoflann",
+        "phtree",
+        "psi_kd",
+        "psi_orth",
+        "psi_spac_h",
+        "psi_spac_z",
+        "scan",
+        "thst_quadtree",
+        "thst_rtree"
+      ]
+    },
+    {
+      "source": "current",
+      "path": "square-full-2d-3d-20261106/radius_scaling_3d/jobs.jsonl",
+      "rows": 2961,
+      "invalid_lines": 0,
+      "outcomes": {
+        "correctness:success": 21,
+        "screen:success": 705,
+        "screen:timeout": 30,
+        "final:success": 2205
+      },
+      "algorithms": [
+        "boost_linear",
+        "boost_quadratic",
+        "boost_rstar",
+        "cgal_kd",
+        "indexicon_kdtree_adaptive",
+        "indexicon_kdtree_longest_axis",
+        "indexicon_kdtree_round_robin",
+        "indexicon_octree",
+        "indexicon_rtree_mbr",
+        "indexicon_rtree_point",
+        "lsi_linear",
+        "lsi_quadratic",
+        "lsi_rstar",
+        "lsi_str",
+        "morton_3d",
+        "morton_plus_3d",
+        "nanoflann",
+        "phtree",
+        "psi_kd",
+        "psi_orth",
+        "scan"
+      ]
+    },
+    {
+      "source": "current",
+      "path": "square-full-2d-3d-20261106/static/jobs.jsonl",
+      "rows": 12030,
+      "invalid_lines": 0,
+      "outcomes": {
+        "correctness:success": 29,
+        "correctness:timeout": 1,
+        "screen:success": 2899,
+        "screen:timeout": 101,
+        "final:success": 8700,
+        "final:timeout": 300
+      },
+      "algorithms": [
+        "boost_linear",
+        "boost_quadratic",
+        "boost_rstar",
+        "cgal_kd",
+        "cgal_range",
+        "indexicon_kdtree_adaptive",
+        "indexicon_kdtree_longest_axis",
+        "indexicon_kdtree_round_robin",
+        "indexicon_mxcif_quadtree",
+        "indexicon_quadtree_longest_axis",
+        "indexicon_quadtree_pr",
+        "indexicon_quadtree_pseudo_median",
+        "indexicon_rtree_mbr",
+        "indexicon_rtree_point",
+        "lsi_linear",
+        "lsi_quadratic",
+        "lsi_rstar",
+        "lsi_str",
+        "morton",
+        "morton_plus",
+        "morton_simd",
+        "nanoflann",
+        "phtree",
+        "psi_kd",
+        "psi_orth",
+        "psi_spac_h",
+        "psi_spac_z",
+        "scan",
+        "thst_quadtree",
+        "thst_rtree"
+      ]
+    },
+    {
+      "source": "current",
+      "path": "square-rectangle-followup-2d-20261113/2D_ESA_geographical/jobs.jsonl",
+      "rows": 226,
+      "invalid_lines": 0,
+      "outcomes": {
+        "correctness:success": 2,
+        "screen:success": 56,
+        "final:success": 168
+      },
+      "algorithms": [
+        "pam",
+        "pkd"
+      ]
+    },
+    {
+      "source": "current",
+      "path": "square-rectangle-followup-2d-20261113/2D_ESA_graph_embeddings/jobs.jsonl",
+      "rows": 122,
+      "invalid_lines": 0,
+      "outcomes": {
+        "correctness:success": 2,
+        "screen:success": 30,
+        "final:success": 90
+      },
+      "algorithms": [
+        "pam",
+        "pkd"
+      ]
+    },
+    {
+      "source": "current",
+      "path": "square-rectangle-followup-2d-20261113/2D_ESA_uniform_points/jobs.jsonl",
+      "rows": 58,
+      "invalid_lines": 0,
+      "outcomes": {
+        "correctness:success": 2,
+        "screen:success": 14,
+        "final:success": 42
+      },
+      "algorithms": [
+        "pam",
+        "pkd"
+      ]
+    },
+    {
+      "source": "current",
+      "path": "square-rectangle-followup-2d-20261113/GeographyLarge/jobs.jsonl",
+      "rows": 802,
+      "invalid_lines": 0,
+      "outcomes": {
+        "correctness:success": 2,
+        "screen:success": 200,
+        "final:success": 600
+      },
+      "algorithms": [
+        "pam",
+        "pkd"
+      ]
+    },
+    {
+      "source": "current",
+      "path": "square-rectangle-followup-2d-20261113/input_scaling/jobs.jsonl",
+      "rows": 482,
+      "invalid_lines": 0,
+      "outcomes": {
+        "correctness:success": 2,
+        "screen:success": 120,
+        "final:success": 360
+      },
+      "algorithms": [
+        "pam",
+        "pkd"
+      ]
+    },
+    {
+      "source": "current",
+      "path": "square-rectangle-followup-2d-20261113/radius_scaling/jobs.jsonl",
+      "rows": 282,
+      "invalid_lines": 0,
+      "outcomes": {
+        "correctness:success": 2,
+        "screen:success": 70,
+        "final:success": 210
+      },
+      "algorithms": [
+        "pam",
+        "pkd"
+      ]
+    },
+    {
+      "source": "current",
+      "path": "square-rectangle-followup-2d-20261113/static/jobs.jsonl",
+      "rows": 802,
+      "invalid_lines": 0,
+      "outcomes": {
+        "correctness:success": 2,
+        "screen:success": 200,
+        "final:success": 600
+      },
+      "algorithms": [
+        "pam",
+        "pkd"
+      ]
+    },
+    {
+      "source": "disk-followup",
+      "path": "_queue-disk-adapters-parity-20261115/2D_ESA_geographical/jobs.jsonl",
+      "rows": 226,
+      "invalid_lines": 0,
+      "outcomes": {
+        "correctness:success": 2,
+        "screen:success": 56,
+        "final:success": 168
+      },
+      "algorithms": [
+        "pargeo",
+        "pgm_multidimensional"
+      ]
+    },
+    {
+      "source": "disk-followup",
+      "path": "_queue-disk-adapters-parity-20261115/2D_ESA_graph_embeddings/jobs.jsonl",
+      "rows": 122,
+      "invalid_lines": 0,
+      "outcomes": {
+        "correctness:success": 2,
+        "screen:success": 30,
+        "final:success": 90
+      },
+      "algorithms": [
+        "pargeo",
+        "pgm_multidimensional"
+      ]
+    },
+    {
+      "source": "disk-followup",
+      "path": "_queue-disk-adapters-parity-20261115/2D_ESA_uniform_points/jobs.jsonl",
+      "rows": 58,
+      "invalid_lines": 0,
+      "outcomes": {
+        "correctness:success": 2,
+        "screen:success": 14,
+        "final:success": 42
+      },
+      "algorithms": [
+        "pargeo",
+        "pgm_multidimensional"
+      ]
+    },
+    {
+      "source": "disk-followup",
+      "path": "_queue-disk-adapters-parity-20261115/GeographyLarge/jobs.jsonl",
+      "rows": 802,
+      "invalid_lines": 0,
+      "outcomes": {
+        "correctness:success": 2,
+        "screen:success": 200,
+        "final:success": 600
+      },
+      "algorithms": [
+        "pargeo",
+        "pgm_multidimensional"
+      ]
+    },
+    {
+      "source": "disk-followup",
+      "path": "_queue-disk-adapters-parity-20261115/input_scaling/jobs.jsonl",
+      "rows": 482,
+      "invalid_lines": 0,
+      "outcomes": {
+        "correctness:success": 2,
+        "screen:success": 120,
+        "final:success": 360
+      },
+      "algorithms": [
+        "pargeo",
+        "pgm_multidimensional"
+      ]
+    },
+    {
+      "source": "disk-followup",
+      "path": "_queue-disk-adapters-parity-20261115/radius_scaling/jobs.jsonl",
+      "rows": 282,
+      "invalid_lines": 0,
+      "outcomes": {
+        "correctness:success": 2,
+        "screen:success": 70,
+        "final:success": 210
+      },
+      "algorithms": [
+        "pargeo",
+        "pgm_multidimensional"
+      ]
+    },
+    {
+      "source": "disk-followup",
+      "path": "_queue-disk-adapters-parity-20261115/static/jobs.jsonl",
+      "rows": 802,
+      "invalid_lines": 0,
+      "outcomes": {
+        "correctness:success": 2,
+        "screen:success": 200,
+        "final:success": 600
+      },
+      "algorithms": [
+        "pargeo",
+        "pgm_multidimensional"
+      ]
+    },
+    {
+      "source": "disk-followup",
+      "path": "_queue-ph-psi-2d-3d-20261115/Static3D/jobs.jsonl",
+      "rows": 1203,
+      "invalid_lines": 0,
+      "outcomes": {
+        "correctness:success": 3,
+        "screen:success": 300,
+        "final:success": 900
+      },
+      "algorithms": [
+        "pgm_multidimensional",
+        "psi_spac_h",
+        "psi_spac_z"
+      ]
+    },
+    {
+      "source": "disk-followup",
+      "path": "_queue-ph-psi-2d-3d-20261115/input_scaling_3d/jobs.jsonl",
+      "rows": 723,
+      "invalid_lines": 0,
+      "outcomes": {
+        "correctness:success": 3,
+        "screen:success": 140,
+        "screen:timeout": 40,
+        "final:success": 540
+      },
+      "algorithms": [
+        "pgm_multidimensional",
+        "psi_spac_h",
+        "psi_spac_z"
+      ]
+    },
+    {
+      "source": "disk-followup",
+      "path": "_queue-ph-psi-2d-3d-20261115/radius_scaling_3d/jobs.jsonl",
+      "rows": 423,
+      "invalid_lines": 0,
+      "outcomes": {
+        "correctness:success": 3,
+        "screen:success": 105,
+        "final:success": 315
+      },
+      "algorithms": [
+        "pgm_multidimensional",
+        "psi_spac_h",
+        "psi_spac_z"
+      ]
+    }
+  ],
+  "queue_statuses": [
+    {
+      "source": "current",
+      "path": "square-full-2d-3d-20261106/status.json",
+      "status": "complete",
+      "completed": [
+        "input_scaling",
+        "radius_scaling",
+        "static",
+        "GeographyLarge",
+        "input_scaling_3d",
+        "radius_scaling_3d",
+        "Static3D",
+        "2D_ESA_graph_embeddings",
+        "2D_ESA_uniform_points",
+        "2D_ESA_geographical"
+      ]
+    },
+    {
+      "source": "current",
+      "path": "square-rectangle-followup-2d-20261113/status.json",
+      "status": "complete",
+      "completed": [
+        "input_scaling",
+        "radius_scaling",
+        "static",
+        "GeographyLarge",
+        "2D_ESA_graph_embeddings",
+        "2D_ESA_uniform_points",
+        "2D_ESA_geographical"
+      ]
+    }
+  ]
+}
